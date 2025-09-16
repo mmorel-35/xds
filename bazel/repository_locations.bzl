@@ -21,9 +21,9 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/envoyproxy/protoc-gen-validate/archive/refs/tags/v1.0.4.tar.gz"],
     ),
     com_github_grpc_grpc = dict(
-        sha256 = "cd256d91781911d46a57506978b3979bfee45d5086a1b6668a3ae19c5e77f8dc",
-        strip_prefix = "grpc-1.69.0",
-        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.69.0.tar.gz"],
+        sha256 = "4a8aa99d5e24f80ea6b7ec95463e16af5bd91aa805e26c661ef6491ae3d2d23c",
+        strip_prefix = "grpc-1.72.0",
+        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.72.0.tar.gz"],
     ),
     com_google_googleapis = dict(
         # TODO(dio): Consider writing a Starlark macro for importing Google API proto.
@@ -39,9 +39,9 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.3.zip"],
     ),
     dev_cel = dict(
-        sha256 = "f54b32a68cc67ef8b42d987ecaf62c5f60ce822b64a4817f240639f13832dc25",
-        strip_prefix = "cel-spec-0.21.2",
-        urls = ["https://github.com/google/cel-spec/archive/refs/tags/v0.21.2.tar.gz"],
+        sha256 = "5cba6b0029e727d1f4d8fd134de4e747cecc0bc293d026017d7edc48058d09f7",
+        strip_prefix = "cel-spec-0.24.0",
+        urls = ["https://github.com/google/cel-spec/archive/refs/tags/v0.24.0.tar.gz"],
     ),
     io_bazel_rules_go = dict(
         sha256 = "b78f77458e77162f45b4564d6b20b6f92f56431ed59eaaab09e7819d1d850313",
