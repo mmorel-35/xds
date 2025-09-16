@@ -3,3 +3,5 @@ build:ci --announce_rc
 # C++17 standard for modern dependencies
 build --cxxopt=-std=c++17
 build --host_cxxopt=-std=c++17
+
+common --enable_bzlmod
