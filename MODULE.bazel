@@ -1,6 +1,7 @@
 module(
     name = "xds",
     version = "0.0.0",
+    repo_name = "com_github_cncf_xds",
 )
 
 bazel_dep(name = "bazel_skylib", version = "1.5.0")
