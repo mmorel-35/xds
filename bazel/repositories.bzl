@@ -7,6 +7,10 @@ def xds_api_dependencies():
         locations = REPOSITORY_LOCATIONS,
     )
     xds_http_archive(
+        "rules_proto",
+        locations = REPOSITORY_LOCATIONS,
+    )
+    xds_http_archive(
         "bazel_gazelle",
         locations = REPOSITORY_LOCATIONS,
     )
@@ -32,10 +36,6 @@ def xds_api_dependencies():
     )
     xds_http_archive(
         "io_bazel_rules_go",
-        locations = REPOSITORY_LOCATIONS,
-    )
-    xds_http_archive(
-        "rules_proto",
         locations = REPOSITORY_LOCATIONS,
     )
 
