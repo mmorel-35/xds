@@ -170,7 +170,8 @@ const file_udpa_annotations_status_proto_rawDesc = "" +
 	"\x06ACTIVE\x10\x02\x12 \n" +
 	"\x1cNEXT_MAJOR_VERSION_CANDIDATE\x10\x03:d\n" +
 	"\vfile_status\x12\x1c.google.protobuf.FileOptions\x18\x87\x80\x99j \x01(\v2\".udpa.annotations.StatusAnnotationR\n" +
-	"fileStatusB)Z'github.com/cncf/xds/go/udpa/annotationsb\x06proto3"
+	"fileStatusB\xad\x01\n" +
+	"\x14com.udpa.annotationsB\vStatusProtoP\x01Z'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3"
 
 var (
 	file_udpa_annotations_status_proto_rawDescOnce sync.Once

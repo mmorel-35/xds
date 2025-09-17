@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/service/orca/v3/orca.proto
 
-package v3
+package orcav3
 
 import (
 	v3 "github.com/cncf/xds/go/xds/data/orca/v3"
@@ -88,8 +88,8 @@ const file_xds_service_orca_v3_orca_proto_rawDesc = "" +
 	"\x0freport_interval\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\x0ereportInterval\x12,\n" +
 	"\x12request_cost_names\x18\x02 \x03(\tR\x10requestCostNames2u\n" +
 	"\x0eOpenRcaService\x12c\n" +
-	"\x11StreamCoreMetrics\x12*.xds.service.orca.v3.OrcaLoadReportRequest\x1a .xds.data.orca.v3.OrcaLoadReport0\x01BY\n" +
-	"\x1ecom.github.xds.service.orca.v3B\tOrcaProtoP\x01Z*github.com/cncf/xds/go/xds/service/orca/v3b\x06proto3"
+	"\x11StreamCoreMetrics\x12*.xds.service.orca.v3.OrcaLoadReportRequest\x1a .xds.data.orca.v3.OrcaLoadReport0\x01B\xc6\x01\n" +
+	"\x17com.xds.service.orca.v3B\tOrcaProtoP\x01Z1github.com/cncf/xds/go/xds/service/orca/v3;orcav3\xa2\x02\x03XSO\xaa\x02\x13Xds.Service.Orca.V3\xca\x02\x13Xds\\Service\\Orca\\V3\xe2\x02\x1fXds\\Service\\Orca\\V3\\GPBMetadata\xea\x02\x16Xds::Service::Orca::V3b\x06proto3"
 
 var (
 	file_xds_service_orca_v3_orca_proto_rawDescOnce sync.Once

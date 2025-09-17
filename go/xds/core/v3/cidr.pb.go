@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/cidr.proto
 
-package v3
+package corev3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -88,8 +88,8 @@ const file_xds_core_v3_cidr_proto_rawDesc = "" +
 	"\tCidrRange\x12.\n" +
 	"\x0eaddress_prefix\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\raddressPrefix\x12E\n" +
 	"\n" +
-	"prefix_len\x18\x02 \x01(\v2\x1c.google.protobuf.UInt32ValueB\b\xbaH\x05*\x03\x18\x80\x01R\tprefixLenBV\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\x0eCidrRangeProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"prefix_len\x18\x02 \x01(\v2\x1c.google.protobuf.UInt32ValueB\b\xbaH\x05*\x03\x18\x80\x01R\tprefixLenB\x9d\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\tCidrProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_cidr_proto_rawDescOnce sync.Once

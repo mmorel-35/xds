@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dudpa/annotations/status.proto\x12\x10udpa.annotations\x1a google/protobuf/descriptor.proto\"\x9a\x01\n\x10StatusAnnotation\x12(\n\x10work_in_progress\x18\x01 \x01(\x08R\x0eworkInProgress\x12\\\n\x16package_version_status\x18\x02 \x01(\x0e\x32&.udpa.annotations.PackageVersionStatusR\x14packageVersionStatus*]\n\x14PackageVersionStatus\x12\x0b\n\x07UNKNOWN\x10\x00\x12\n\n\x06\x46ROZEN\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12 \n\x1cNEXT_MAJOR_VERSION_CANDIDATE\x10\x03:d\n\x0b\x66ile_status\x12\x1c.google.protobuf.FileOptions\x18\x87\x80\x99j \x01(\x0b\x32\".udpa.annotations.StatusAnnotationR\nfileStatusB)Z\'github.com/cncf/xds/go/udpa/annotationsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dudpa/annotations/status.proto\x12\x10udpa.annotations\x1a google/protobuf/descriptor.proto\"\x9a\x01\n\x10StatusAnnotation\x12(\n\x10work_in_progress\x18\x01 \x01(\x08R\x0eworkInProgress\x12\\\n\x16package_version_status\x18\x02 \x01(\x0e\x32&.udpa.annotations.PackageVersionStatusR\x14packageVersionStatus*]\n\x14PackageVersionStatus\x12\x0b\n\x07UNKNOWN\x10\x00\x12\n\n\x06\x46ROZEN\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12 \n\x1cNEXT_MAJOR_VERSION_CANDIDATE\x10\x03:d\n\x0b\x66ile_status\x12\x1c.google.protobuf.FileOptions\x18\x87\x80\x99j \x01(\x0b\x32\".udpa.annotations.StatusAnnotationR\nfileStatusB\xad\x01\n\x14\x63om.udpa.annotationsB\x0bStatusProtoP\x01Z\'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'udpa.annotations.status_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'Z\'github.com/cncf/xds/go/udpa/annotations'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\024com.udpa.annotationsB\013StatusProtoP\001Z\'github.com/cncf/xds/go/udpa/annotations\242\002\003UAX\252\002\020Udpa.Annotations\312\002\020Udpa\\Annotations\342\002\034Udpa\\Annotations\\GPBMetadata\352\002\021Udpa::Annotations'
   _globals['_PACKAGEVERSIONSTATUS']._serialized_start=242
   _globals['_PACKAGEVERSIONSTATUS']._serialized_end=335
   _globals['_STATUSANNOTATION']._serialized_start=86

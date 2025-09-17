@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/collection_entry.proto
 
-package v3
+package corev3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -197,8 +197,8 @@ const file_xds_core_v3_collection_entry_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tB\x1c\xbaH\x19r\x172\x15^[0-9a-zA-Z_\\-\\.~:]+$R\x04name\x12\x18\n" +
 	"\aversion\x18\x02 \x01(\tR\aversion\x120\n" +
 	"\bresource\x18\x03 \x01(\v2\x14.google.protobuf.AnyR\bresourceB\x1b\n" +
-	"\x12resource_specifier\x12\x05\xbaH\x02\b\x01B\\\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\x14CollectionEntryProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"\x12resource_specifier\x12\x05\xbaH\x02\b\x01B\xa8\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\x14CollectionEntryProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_collection_entry_proto_rawDescOnce sync.Once

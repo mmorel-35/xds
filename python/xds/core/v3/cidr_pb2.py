@@ -27,14 +27,14 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16xds/core/v3/cidr.proto\x12\x0bxds.core.v3\x1a\x1fxds/annotations/v3/status.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1b\x62uf/validate/validate.proto\"\x82\x01\n\tCidrRange\x12.\n\x0e\x61\x64\x64ress_prefix\x18\x01 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\raddressPrefix\x12\x45\n\nprefix_len\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB\x08\xbaH\x05*\x03\x18\x80\x01R\tprefixLenBV\n\x16\x63om.github.xds.core.v3B\x0e\x43idrRangeProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16xds/core/v3/cidr.proto\x12\x0bxds.core.v3\x1a\x1fxds/annotations/v3/status.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1b\x62uf/validate/validate.proto\"\x82\x01\n\tCidrRange\x12.\n\x0e\x61\x64\x64ress_prefix\x18\x01 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\raddressPrefix\x12\x45\n\nprefix_len\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB\x08\xbaH\x05*\x03\x18\x80\x01R\tprefixLenB\x9d\x01\n\x0f\x63om.xds.core.v3B\tCidrProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\x0bXds.Core.V3\xca\x02\x0bXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.core.v3.cidr_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.github.xds.core.v3B\016CidrRangeProtoP\001Z\"github.com/cncf/xds/go/xds/core/v3\322\306\244\341\006\002\010\001'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.xds.core.v3B\tCidrProtoP\001Z)github.com/cncf/xds/go/xds/core/v3;corev3\242\002\003XCX\252\002\013Xds.Core.V3\312\002\013Xds\\Core\\V3\342\002\027Xds\\Core\\V3\\GPBMetadata\352\002\rXds::Core::V3\322\306\244\341\006\002\010\001'
   _globals['_CIDRRANGE'].fields_by_name['address_prefix']._loaded_options = None
   _globals['_CIDRRANGE'].fields_by_name['address_prefix']._serialized_options = b'\272H\004r\002\020\001'
   _globals['_CIDRRANGE'].fields_by_name['prefix_len']._loaded_options = None

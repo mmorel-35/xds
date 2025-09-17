@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#xds/annotations/v3/versioning.proto\x12\x12xds.annotations.v3\x1a google/protobuf/descriptor.proto\"J\n\x14VersioningAnnotation\x12\x32\n\x15previous_message_type\x18\x01 \x01(\tR\x13previousMessageType:l\n\nversioning\x12\x1f.google.protobuf.MessageOptions\x18\x93\xfd\x86, \x01(\x0b\x32(.xds.annotations.v3.VersioningAnnotationR\nversioningB+Z)github.com/cncf/xds/go/xds/annotations/v3b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#xds/annotations/v3/versioning.proto\x12\x12xds.annotations.v3\x1a google/protobuf/descriptor.proto\"J\n\x14VersioningAnnotation\x12\x32\n\x15previous_message_type\x18\x01 \x01(\tR\x13previousMessageType:l\n\nversioning\x12\x1f.google.protobuf.MessageOptions\x18\x93\xfd\x86, \x01(\x0b\x32(.xds.annotations.v3.VersioningAnnotationR\nversioningB\xcc\x01\n\x16\x63om.xds.annotations.v3B\x0fVersioningProtoP\x01Z7github.com/cncf/xds/go/xds/annotations/v3;annotationsv3\xa2\x02\x03XAX\xaa\x02\x12Xds.Annotations.V3\xca\x02\x12Xds\\Annotations\\V3\xe2\x02\x1eXds\\Annotations\\V3\\GPBMetadata\xea\x02\x14Xds::Annotations::V3b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.annotations.v3.versioning_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'Z)github.com/cncf/xds/go/xds/annotations/v3'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.xds.annotations.v3B\017VersioningProtoP\001Z7github.com/cncf/xds/go/xds/annotations/v3;annotationsv3\242\002\003XAX\252\002\022Xds.Annotations.V3\312\002\022Xds\\Annotations\\V3\342\002\036Xds\\Annotations\\V3\\GPBMetadata\352\002\024Xds::Annotations::V3'
   _globals['_VERSIONINGANNOTATION']._serialized_start=93
   _globals['_VERSIONINGANNOTATION']._serialized_end=167
 # @@protoc_insertion_point(module_scope)

@@ -27,14 +27,14 @@ from xds.type.matcher.v3 import matcher_pb2 as xds_dot_type_dot_matcher_dot_v3_d
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n xds/type/matcher/v3/domain.proto\x12\x13xds.type.matcher.v3\x1a\x1fxds/annotations/v3/status.proto\x1a!xds/type/matcher/v3/matcher.proto\x1a\x1b\x62uf/validate/validate.proto\"\xe8\x01\n\x11ServerNameMatcher\x12]\n\x0f\x64omain_matchers\x18\x01 \x03(\x0b\x32\x34.xds.type.matcher.v3.ServerNameMatcher.DomainMatcherR\x0e\x64omainMatchers\x1at\n\rDomainMatcher\x12\"\n\x07\x64omains\x18\x01 \x03(\tB\x08\xbaH\x05\x92\x01\x02\x08\x01R\x07\x64omains\x12?\n\x08on_match\x18\x02 \x01(\x0b\x32$.xds.type.matcher.v3.Matcher.OnMatchR\x07onMatchBn\n\x1e\x63om.github.xds.type.matcher.v3B\x16ServerNameMatcherProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n xds/type/matcher/v3/domain.proto\x12\x13xds.type.matcher.v3\x1a\x1fxds/annotations/v3/status.proto\x1a!xds/type/matcher/v3/matcher.proto\x1a\x1b\x62uf/validate/validate.proto\"\xe8\x01\n\x11ServerNameMatcher\x12]\n\x0f\x64omain_matchers\x18\x01 \x03(\x0b\x32\x34.xds.type.matcher.v3.ServerNameMatcher.DomainMatcherR\x0e\x64omainMatchers\x1at\n\rDomainMatcher\x12\"\n\x07\x64omains\x18\x01 \x03(\tB\x08\xbaH\x05\x92\x01\x02\x08\x01R\x07\x64omains\x12?\n\x08on_match\x18\x02 \x01(\x0b\x32$.xds.type.matcher.v3.Matcher.OnMatchR\x07onMatchB\xd3\x01\n\x17\x63om.xds.type.matcher.v3B\x0b\x44omainProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.type.matcher.v3.domain_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\036com.github.xds.type.matcher.v3B\026ServerNameMatcherProtoP\001Z*github.com/cncf/xds/go/xds/type/matcher/v3\322\306\244\341\006\002\010\001'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.xds.type.matcher.v3B\013DomainProtoP\001Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\242\002\003XTM\252\002\023Xds.Type.Matcher.V3\312\002\023Xds\\Type\\Matcher\\V3\342\002\037Xds\\Type\\Matcher\\V3\\GPBMetadata\352\002\026Xds::Type::Matcher::V3\322\306\244\341\006\002\010\001'
   _globals['_SERVERNAMEMATCHER_DOMAINMATCHER'].fields_by_name['domains']._loaded_options = None
   _globals['_SERVERNAMEMATCHER_DOMAINMATCHER'].fields_by_name['domains']._serialized_options = b'\272H\005\222\001\002\010\001'
   _globals['_SERVERNAMEMATCHER']._serialized_start=155

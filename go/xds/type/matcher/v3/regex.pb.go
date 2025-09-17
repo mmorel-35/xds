@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/type/matcher/v3/regex.proto
 
-package v3
+package matcherv3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -164,9 +164,9 @@ const file_xds_type_matcher_v3_regex_proto_rawDesc = "" +
 	"google_re2\x18\x01 \x01(\v2+.xds.type.matcher.v3.RegexMatcher.GoogleRE2B\x06\xbaH\x03\xc8\x01\x01H\x00R\tgoogleRe2\x12\x1d\n" +
 	"\x05regex\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05regex\x1a\v\n" +
 	"\tGoogleRE2B\x14\n" +
-	"\vengine_type\x12\x05\xbaH\x02\b\x01BZ\n" +
-	"\x1ecom.github.xds.type.matcher.v3B\n" +
-	"RegexProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3"
+	"\vengine_type\x12\x05\xbaH\x02\b\x01B\xca\x01\n" +
+	"\x17com.xds.type.matcher.v3B\n" +
+	"RegexProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3"
 
 var (
 	file_xds_type_matcher_v3_regex_proto_rawDescOnce sync.Once

@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/authority.proto
 
-package v3
+package corev3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -74,8 +74,8 @@ const file_xds_core_v3_authority_proto_rawDesc = "" +
 	"\n" +
 	"\x1bxds/core/v3/authority.proto\x12\vxds.core.v3\x1a\x1fxds/annotations/v3/status.proto\x1a\x1bbuf/validate/validate.proto\"(\n" +
 	"\tAuthority\x12\x1b\n" +
-	"\x04name\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04nameBV\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\x0eAuthorityProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"\x04name\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04nameB\xa2\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\x0eAuthorityProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_authority_proto_rawDescOnce sync.Once

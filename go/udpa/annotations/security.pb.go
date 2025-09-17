@@ -110,7 +110,8 @@ const file_udpa_annotations_security_proto_rawDesc = "" +
 	"\x17FieldSecurityAnnotation\x12K\n" +
 	"\"configure_for_untrusted_downstream\x18\x01 \x01(\bR\x1fconfigureForUntrustedDownstream\x12G\n" +
 	" configure_for_untrusted_upstream\x18\x02 \x01(\bR\x1dconfigureForUntrustedUpstream:g\n" +
-	"\bsecurity\x12\x1d.google.protobuf.FieldOptions\x18\xb1\xf2\xa6\x05 \x01(\v2).udpa.annotations.FieldSecurityAnnotationR\bsecurityB1\xba\x80\xc8\xd1\x06\x02\b\x01Z'github.com/cncf/xds/go/udpa/annotationsb\x06proto3"
+	"\bsecurity\x12\x1d.google.protobuf.FieldOptions\x18\xb1\xf2\xa6\x05 \x01(\v2).udpa.annotations.FieldSecurityAnnotationR\bsecurityB\xb7\x01\xba\x80\xc8\xd1\x06\x02\b\x01\n" +
+	"\x14com.udpa.annotationsB\rSecurityProtoP\x01Z'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3"
 
 var (
 	file_udpa_annotations_security_proto_rawDescOnce sync.Once

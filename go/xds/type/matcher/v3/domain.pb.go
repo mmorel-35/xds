@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/type/matcher/v3/domain.proto
 
-package v3
+package matcherv3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -147,8 +147,8 @@ const file_xds_type_matcher_v3_domain_proto_rawDesc = "" +
 	"\x0fdomain_matchers\x18\x01 \x03(\v24.xds.type.matcher.v3.ServerNameMatcher.DomainMatcherR\x0edomainMatchers\x1at\n" +
 	"\rDomainMatcher\x12\"\n" +
 	"\adomains\x18\x01 \x03(\tB\b\xbaH\x05\x92\x01\x02\b\x01R\adomains\x12?\n" +
-	"\bon_match\x18\x02 \x01(\v2$.xds.type.matcher.v3.Matcher.OnMatchR\aonMatchBn\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x1ecom.github.xds.type.matcher.v3B\x16ServerNameMatcherProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3"
+	"\bon_match\x18\x02 \x01(\v2$.xds.type.matcher.v3.Matcher.OnMatchR\aonMatchB\xd3\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x17com.xds.type.matcher.v3B\vDomainProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3"
 
 var (
 	file_xds_type_matcher_v3_domain_proto_rawDescOnce sync.Once

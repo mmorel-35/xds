@@ -1,8 +1,13 @@
-version: v1
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/cncf/xds/go
 plugins:
-  - plugin: buf.build/protocolbuffers/go
+  - remote: buf.build/protocolbuffers/go
     out: go
     opt:
       - paths=source_relative
-  - plugin: buf.build/protocolbuffers/python
+  - remote: buf.build/protocolbuffers/python
     out: python

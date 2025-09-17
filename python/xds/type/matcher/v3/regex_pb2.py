@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fxds/type/matcher/v3/regex.proto\x12\x13xds.type.matcher.v3\x1a\x1b\x62uf/validate/validate.proto\"\xa6\x01\n\x0cRegexMatcher\x12T\n\ngoogle_re2\x18\x01 \x01(\x0b\x32+.xds.type.matcher.v3.RegexMatcher.GoogleRE2B\x06\xbaH\x03\xc8\x01\x01H\x00R\tgoogleRe2\x12\x1d\n\x05regex\x18\x02 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x05regex\x1a\x0b\n\tGoogleRE2B\x14\n\x0b\x65ngine_type\x12\x05\xbaH\x02\x08\x01\x42Z\n\x1e\x63om.github.xds.type.matcher.v3B\nRegexProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fxds/type/matcher/v3/regex.proto\x12\x13xds.type.matcher.v3\x1a\x1b\x62uf/validate/validate.proto\"\xa6\x01\n\x0cRegexMatcher\x12T\n\ngoogle_re2\x18\x01 \x01(\x0b\x32+.xds.type.matcher.v3.RegexMatcher.GoogleRE2B\x06\xbaH\x03\xc8\x01\x01H\x00R\tgoogleRe2\x12\x1d\n\x05regex\x18\x02 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x05regex\x1a\x0b\n\tGoogleRE2B\x14\n\x0b\x65ngine_type\x12\x05\xbaH\x02\x08\x01\x42\xca\x01\n\x17\x63om.xds.type.matcher.v3B\nRegexProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.type.matcher.v3.regex_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\036com.github.xds.type.matcher.v3B\nRegexProtoP\001Z*github.com/cncf/xds/go/xds/type/matcher/v3'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.xds.type.matcher.v3B\nRegexProtoP\001Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\242\002\003XTM\252\002\023Xds.Type.Matcher.V3\312\002\023Xds\\Type\\Matcher\\V3\342\002\037Xds\\Type\\Matcher\\V3\\GPBMetadata\352\002\026Xds::Type::Matcher::V3'
   _globals['_REGEXMATCHER'].oneofs_by_name['engine_type']._loaded_options = None
   _globals['_REGEXMATCHER'].oneofs_by_name['engine_type']._serialized_options = b'\272H\002\010\001'
   _globals['_REGEXMATCHER'].fields_by_name['google_re2']._loaded_options = None

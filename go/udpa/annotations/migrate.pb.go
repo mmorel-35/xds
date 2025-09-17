@@ -262,7 +262,8 @@ const file_udpa_annotations_migrate_proto_rawDesc = "" +
 	"\rfield_migrate\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xe3\xffQ \x01(\v2(.udpa.annotations.FieldMigrateAnnotationR\ffieldMigrate:g\n" +
 	"\fenum_migrate\x12\x1c.google.protobuf.EnumOptions\x18\x8e\xe3\xffQ \x01(\v2#.udpa.annotations.MigrateAnnotationR\venumMigrate:w\n" +
 	"\x12enum_value_migrate\x12!.google.protobuf.EnumValueOptions\x18\x8e\xe3\xffQ \x01(\v2#.udpa.annotations.MigrateAnnotationR\x10enumValueMigrate:k\n" +
-	"\ffile_migrate\x12\x1c.google.protobuf.FileOptions\x18\x8e\xe3\xffQ \x01(\v2'.udpa.annotations.FileMigrateAnnotationR\vfileMigrateB)Z'github.com/cncf/xds/go/udpa/annotationsb\x06proto3"
+	"\ffile_migrate\x12\x1c.google.protobuf.FileOptions\x18\x8e\xe3\xffQ \x01(\v2'.udpa.annotations.FileMigrateAnnotationR\vfileMigrateB\xae\x01\n" +
+	"\x14com.udpa.annotationsB\fMigrateProtoP\x01Z'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3"
 
 var (
 	file_udpa_annotations_migrate_proto_rawDescOnce sync.Once

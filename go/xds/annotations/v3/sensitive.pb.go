@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/annotations/v3/sensitive.proto
 
-package v3
+package annotationsv3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -49,7 +49,8 @@ var File_xds_annotations_v3_sensitive_proto protoreflect.FileDescriptor
 const file_xds_annotations_v3_sensitive_proto_rawDesc = "" +
 	"\n" +
 	"\"xds/annotations/v3/sensitive.proto\x12\x12xds.annotations.v3\x1a google/protobuf/descriptor.proto:>\n" +
-	"\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xb5ы\x1d \x01(\bR\tsensitiveB+Z)github.com/cncf/xds/go/xds/annotations/v3b\x06proto3"
+	"\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xb5ы\x1d \x01(\bR\tsensitiveB\xcb\x01\n" +
+	"\x16com.xds.annotations.v3B\x0eSensitiveProtoP\x01Z7github.com/cncf/xds/go/xds/annotations/v3;annotationsv3\xa2\x02\x03XAX\xaa\x02\x12Xds.Annotations.V3\xca\x02\x12Xds\\Annotations\\V3\xe2\x02\x1eXds\\Annotations\\V3\\GPBMetadata\xea\x02\x14Xds::Annotations::V3b\x06proto3"
 
 var file_xds_annotations_v3_sensitive_proto_goTypes = []any{
 	(*descriptorpb.FieldOptions)(nil), // 0: google.protobuf.FieldOptions

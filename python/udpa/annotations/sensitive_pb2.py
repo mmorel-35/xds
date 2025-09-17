@@ -25,12 +25,12 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n udpa/annotations/sensitive.proto\x12\x10udpa.annotations\x1a google/protobuf/descriptor.proto:>\n\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xf7\xb6\xc1$ \x01(\x08R\tsensitiveB)Z\'github.com/cncf/xds/go/udpa/annotationsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n udpa/annotations/sensitive.proto\x12\x10udpa.annotations\x1a google/protobuf/descriptor.proto:>\n\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xf7\xb6\xc1$ \x01(\x08R\tsensitiveB\xb0\x01\n\x14\x63om.udpa.annotationsB\x0eSensitiveProtoP\x01Z\'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'udpa.annotations.sensitive_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'Z\'github.com/cncf/xds/go/udpa/annotations'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\024com.udpa.annotationsB\016SensitiveProtoP\001Z\'github.com/cncf/xds/go/udpa/annotations\242\002\003UAX\252\002\020Udpa.Annotations\312\002\020Udpa\\Annotations\342\002\034Udpa\\Annotations\\GPBMetadata\352\002\021Udpa::Annotations'
 # @@protoc_insertion_point(module_scope)

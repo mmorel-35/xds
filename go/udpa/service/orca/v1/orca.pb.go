@@ -8,7 +8,7 @@
 // 	protoc        (unknown)
 // source: udpa/service/orca/v1/orca.proto
 
-package v1
+package orcav1
 
 import (
 	v1 "github.com/cncf/xds/go/udpa/data/orca/v1"
@@ -92,8 +92,8 @@ const file_udpa_service_orca_v1_orca_proto_rawDesc = "" +
 	"\x0freport_interval\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\x0ereportInterval\x12,\n" +
 	"\x12request_cost_names\x18\x02 \x03(\tR\x10requestCostNames2w\n" +
 	"\x0eOpenRcaService\x12e\n" +
-	"\x11StreamCoreMetrics\x12+.udpa.service.orca.v1.OrcaLoadReportRequest\x1a!.udpa.data.orca.v1.OrcaLoadReport0\x01B`\n" +
-	"$com.github.udpa.udpa.service.orca.v1B\tOrcaProtoP\x01Z+github.com/cncf/xds/go/udpa/service/orca/v1b\x06proto3"
+	"\x11StreamCoreMetrics\x12+.udpa.service.orca.v1.OrcaLoadReportRequest\x1a!.udpa.data.orca.v1.OrcaLoadReport0\x01B\xcc\x01\n" +
+	"\x18com.udpa.service.orca.v1B\tOrcaProtoP\x01Z2github.com/cncf/xds/go/udpa/service/orca/v1;orcav1\xa2\x02\x03USO\xaa\x02\x14Udpa.Service.Orca.V1\xca\x02\x14Udpa\\Service\\Orca\\V1\xe2\x02 Udpa\\Service\\Orca\\V1\\GPBMetadata\xea\x02\x17Udpa::Service::Orca::V1b\x06proto3"
 
 var (
 	file_udpa_service_orca_v1_orca_proto_rawDescOnce sync.Once

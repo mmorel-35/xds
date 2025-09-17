@@ -27,14 +27,14 @@ from xds.core.v3 import context_params_pb2 as xds_dot_core_dot_v3_dot_context__p
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fxds/core/v3/resource_name.proto\x12\x0bxds.core.v3\x1a\x1fxds/annotations/v3/status.proto\x1a xds/core/v3/context_params.proto\x1a\x1b\x62uf/validate/validate.proto\"\xa0\x01\n\x0cResourceName\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n\tauthority\x18\x02 \x01(\tR\tauthority\x12,\n\rresource_type\x18\x03 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x0cresourceType\x12\x34\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x1a.xds.core.v3.ContextParamsR\x07\x63ontextBY\n\x16\x63om.github.xds.core.v3B\x11ResourceNameProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fxds/core/v3/resource_name.proto\x12\x0bxds.core.v3\x1a\x1fxds/annotations/v3/status.proto\x1a xds/core/v3/context_params.proto\x1a\x1b\x62uf/validate/validate.proto\"\xa0\x01\n\x0cResourceName\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n\tauthority\x18\x02 \x01(\tR\tauthority\x12,\n\rresource_type\x18\x03 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x0cresourceType\x12\x34\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x1a.xds.core.v3.ContextParamsR\x07\x63ontextB\xa5\x01\n\x0f\x63om.xds.core.v3B\x11ResourceNameProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\x0bXds.Core.V3\xca\x02\x0bXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.core.v3.resource_name_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.github.xds.core.v3B\021ResourceNameProtoP\001Z\"github.com/cncf/xds/go/xds/core/v3\322\306\244\341\006\002\010\001'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.xds.core.v3B\021ResourceNameProtoP\001Z)github.com/cncf/xds/go/xds/core/v3;corev3\242\002\003XCX\252\002\013Xds.Core.V3\312\002\013Xds\\Core\\V3\342\002\027Xds\\Core\\V3\\GPBMetadata\352\002\rXds::Core::V3\322\306\244\341\006\002\010\001'
   _globals['_RESOURCENAME'].fields_by_name['resource_type']._loaded_options = None
   _globals['_RESOURCENAME'].fields_by_name['resource_type']._serialized_options = b'\272H\004r\002\020\001'
   _globals['_RESOURCENAME']._serialized_start=145

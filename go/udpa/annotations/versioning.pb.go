@@ -101,7 +101,8 @@ const file_udpa_annotations_versioning_proto_rawDesc = "" +
 	"\x15previous_message_type\x18\x01 \x01(\tR\x13previousMessageType:j\n" +
 	"\n" +
 	"versioning\x12\x1f.google.protobuf.MessageOptions\x18ӈ\xe1\x03 \x01(\v2&.udpa.annotations.VersioningAnnotationR\n" +
-	"versioningB)Z'github.com/cncf/xds/go/udpa/annotationsb\x06proto3"
+	"versioningB\xb1\x01\n" +
+	"\x14com.udpa.annotationsB\x0fVersioningProtoP\x01Z'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3"
 
 var (
 	file_udpa_annotations_versioning_proto_rawDescOnce sync.Once

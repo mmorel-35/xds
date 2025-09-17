@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/resource_locator.proto
 
-package v3
+package corev3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -350,8 +350,8 @@ const file_xds_core_v3_resource_locator_proto_rawDesc = "" +
 	"\x05XDSTP\x10\x00\x12\b\n" +
 	"\x04HTTP\x10\x01\x12\b\n" +
 	"\x04FILE\x10\x02B\x19\n" +
-	"\x17context_param_specifierB\\\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\x14ResourceLocatorProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"\x17context_param_specifierB\xa8\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\x14ResourceLocatorProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_resource_locator_proto_rawDescOnce sync.Once

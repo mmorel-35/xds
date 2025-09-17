@@ -8,7 +8,7 @@
 // 	protoc        (unknown)
 // source: udpa/type/v1/typed_struct.proto
 
-package v1
+package typev1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -111,8 +111,8 @@ const file_udpa_type_v1_typed_struct_proto_rawDesc = "" +
 	"\x1fudpa/type/v1/typed_struct.proto\x12\fudpa.type.v1\x1a\x1cgoogle/protobuf/struct.proto\"W\n" +
 	"\vTypedStruct\x12\x19\n" +
 	"\btype_url\x18\x01 \x01(\tR\atypeUrl\x12-\n" +
-	"\x05value\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x05valueBW\n" +
-	"\x1ccom.github.udpa.udpa.type.v1B\x10TypedStructProtoP\x01Z#github.com/cncf/xds/go/udpa/type/v1b\x06proto3"
+	"\x05value\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x05valueB\xa2\x01\n" +
+	"\x10com.udpa.type.v1B\x10TypedStructProtoP\x01Z*github.com/cncf/xds/go/udpa/type/v1;typev1\xa2\x02\x03UTX\xaa\x02\fUdpa.Type.V1\xca\x02\fUdpa\\Type\\V1\xe2\x02\x18Udpa\\Type\\V1\\GPBMetadata\xea\x02\x0eUdpa::Type::V1b\x06proto3"
 
 var (
 	file_udpa_type_v1_typed_struct_proto_rawDescOnce sync.Once

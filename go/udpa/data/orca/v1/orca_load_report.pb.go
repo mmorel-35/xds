@@ -8,10 +8,10 @@
 // 	protoc        (unknown)
 // source: udpa/data/orca/v1/orca_load_report.proto
 
-package v1
+package orcav1
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -128,8 +128,8 @@ const file_udpa_data_orca_v1_orca_load_report_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\x1a>\n" +
 	"\x10UtilizationEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01Bd\n" +
-	"!com.github.udpa.udpa.data.orca.v1B\x13OrcaLoadReportProtoP\x01Z(github.com/cncf/xds/go/udpa/data/orca/v1b\x06proto3"
+	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01B\xc4\x01\n" +
+	"\x15com.udpa.data.orca.v1B\x13OrcaLoadReportProtoP\x01Z/github.com/cncf/xds/go/udpa/data/orca/v1;orcav1\xa2\x02\x03UDO\xaa\x02\x11Udpa.Data.Orca.V1\xca\x02\x11Udpa\\Data\\Orca\\V1\xe2\x02\x1dUdpa\\Data\\Orca\\V1\\GPBMetadata\xea\x02\x14Udpa::Data::Orca::V1b\x06proto3"
 
 var (
 	file_udpa_data_orca_v1_orca_load_report_proto_rawDescOnce sync.Once

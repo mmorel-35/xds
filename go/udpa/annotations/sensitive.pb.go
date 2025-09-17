@@ -53,7 +53,8 @@ var File_udpa_annotations_sensitive_proto protoreflect.FileDescriptor
 const file_udpa_annotations_sensitive_proto_rawDesc = "" +
 	"\n" +
 	" udpa/annotations/sensitive.proto\x12\x10udpa.annotations\x1a google/protobuf/descriptor.proto:>\n" +
-	"\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xf7\xb6\xc1$ \x01(\bR\tsensitiveB)Z'github.com/cncf/xds/go/udpa/annotationsb\x06proto3"
+	"\tsensitive\x12\x1d.google.protobuf.FieldOptions\x18\xf7\xb6\xc1$ \x01(\bR\tsensitiveB\xb0\x01\n" +
+	"\x14com.udpa.annotationsB\x0eSensitiveProtoP\x01Z'github.com/cncf/xds/go/udpa/annotations\xa2\x02\x03UAX\xaa\x02\x10Udpa.Annotations\xca\x02\x10Udpa\\Annotations\xe2\x02\x1cUdpa\\Annotations\\GPBMetadata\xea\x02\x11Udpa::Annotationsb\x06proto3"
 
 var file_udpa_annotations_sensitive_proto_goTypes = []any{
 	(*descriptorpb.FieldOptions)(nil), // 0: google.protobuf.FieldOptions

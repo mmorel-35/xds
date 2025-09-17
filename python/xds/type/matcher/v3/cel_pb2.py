@@ -26,14 +26,14 @@ from xds.type.v3 import cel_pb2 as xds_dot_type_dot_v3_dot_cel__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dxds/type/matcher/v3/cel.proto\x12\x13xds.type.matcher.v3\x1a\x15xds/type/v3/cel.proto\x1a\x1b\x62uf/validate/validate.proto\"q\n\nCelMatcher\x12\x41\n\nexpr_match\x18\x01 \x01(\x0b\x32\x1a.xds.type.v3.CelExpressionB\x06\xbaH\x03\xc8\x01\x01R\texprMatch\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scriptionBX\n\x1e\x63om.github.xds.type.matcher.v3B\x08\x43\x65lProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dxds/type/matcher/v3/cel.proto\x12\x13xds.type.matcher.v3\x1a\x15xds/type/v3/cel.proto\x1a\x1b\x62uf/validate/validate.proto\"q\n\nCelMatcher\x12\x41\n\nexpr_match\x18\x01 \x01(\x0b\x32\x1a.xds.type.v3.CelExpressionB\x06\xbaH\x03\xc8\x01\x01R\texprMatch\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scriptionB\xc8\x01\n\x17\x63om.xds.type.matcher.v3B\x08\x43\x65lProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.type.matcher.v3.cel_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\036com.github.xds.type.matcher.v3B\010CelProtoP\001Z*github.com/cncf/xds/go/xds/type/matcher/v3'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.xds.type.matcher.v3B\010CelProtoP\001Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\242\002\003XTM\252\002\023Xds.Type.Matcher.V3\312\002\023Xds\\Type\\Matcher\\V3\342\002\037Xds\\Type\\Matcher\\V3\\GPBMetadata\352\002\026Xds::Type::Matcher::V3'
   _globals['_CELMATCHER'].fields_by_name['expr_match']._loaded_options = None
   _globals['_CELMATCHER'].fields_by_name['expr_match']._serialized_options = b'\272H\003\310\001\001'
   _globals['_CELMATCHER']._serialized_start=106

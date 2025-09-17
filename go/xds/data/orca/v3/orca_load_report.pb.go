@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/data/orca/v3/orca_load_report.proto
 
-package v3
+package orcav3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -180,8 +180,8 @@ const file_xds_data_orca_v3_orca_load_report_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\x1a?\n" +
 	"\x11NamedMetricsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01B]\n" +
-	"\x1bcom.github.xds.data.orca.v3B\x13OrcaLoadReportProtoP\x01Z'github.com/cncf/xds/go/xds/data/orca/v3b\x06proto3"
+	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01B\xbe\x01\n" +
+	"\x14com.xds.data.orca.v3B\x13OrcaLoadReportProtoP\x01Z.github.com/cncf/xds/go/xds/data/orca/v3;orcav3\xa2\x02\x03XDO\xaa\x02\x10Xds.Data.Orca.V3\xca\x02\x10Xds\\Data\\Orca\\V3\xe2\x02\x1cXds\\Data\\Orca\\V3\\GPBMetadata\xea\x02\x13Xds::Data::Orca::V3b\x06proto3"
 
 var (
 	file_xds_data_orca_v3_orca_load_report_proto_rawDescOnce sync.Once

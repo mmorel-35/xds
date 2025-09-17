@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/type/matcher/v3/cel.proto
 
-package v3
+package matcherv3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	v3 "github.com/cncf/xds/go/xds/type/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -102,8 +102,8 @@ const file_xds_type_matcher_v3_cel_proto_rawDesc = "" +
 	"CelMatcher\x12A\n" +
 	"\n" +
 	"expr_match\x18\x01 \x01(\v2\x1a.xds.type.v3.CelExpressionB\x06\xbaH\x03\xc8\x01\x01R\texprMatch\x12 \n" +
-	"\vdescription\x18\x02 \x01(\tR\vdescriptionBX\n" +
-	"\x1ecom.github.xds.type.matcher.v3B\bCelProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3"
+	"\vdescription\x18\x02 \x01(\tR\vdescriptionB\xc8\x01\n" +
+	"\x17com.xds.type.matcher.v3B\bCelProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3"
 
 var (
 	file_xds_type_matcher_v3_cel_proto_rawDescOnce sync.Once

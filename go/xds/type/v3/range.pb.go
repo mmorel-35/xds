@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/type/v3/range.proto
 
-package v3
+package typev3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -204,9 +204,9 @@ const file_xds_type_v3_range_proto_rawDesc = "" +
 	"\x03end\x18\x02 \x01(\x05R\x03end\"5\n" +
 	"\vDoubleRange\x12\x14\n" +
 	"\x05start\x18\x01 \x01(\x01R\x05start\x12\x10\n" +
-	"\x03end\x18\x02 \x01(\x01R\x03endBJ\n" +
-	"\x16com.github.xds.type.v3B\n" +
-	"RangeProtoP\x01Z\"github.com/cncf/xds/go/xds/type/v3b\x06proto3"
+	"\x03end\x18\x02 \x01(\x01R\x03endB\x96\x01\n" +
+	"\x0fcom.xds.type.v3B\n" +
+	"RangeProtoP\x01Z)github.com/cncf/xds/go/xds/type/v3;typev3\xa2\x02\x03XTX\xaa\x02\vXds.Type.V3\xca\x02\vXds\\Type\\V3\xe2\x02\x17Xds\\Type\\V3\\GPBMetadata\xea\x02\rXds::Type::V3b\x06proto3"
 
 var (
 	file_xds_type_v3_range_proto_rawDescOnce sync.Once

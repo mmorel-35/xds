@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/annotations/v3/security.proto
 
-package v3
+package annotationsv3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -106,7 +106,8 @@ const file_xds_annotations_v3_security_proto_rawDesc = "" +
 	"\x17FieldSecurityAnnotation\x12K\n" +
 	"\"configure_for_untrusted_downstream\x18\x01 \x01(\bR\x1fconfigureForUntrustedDownstream\x12G\n" +
 	" configure_for_untrusted_upstream\x18\x02 \x01(\bR\x1dconfigureForUntrustedUpstream:i\n" +
-	"\bsecurity\x12\x1d.google.protobuf.FieldOptions\x18\xa7\x96\x9d/ \x01(\v2+.xds.annotations.v3.FieldSecurityAnnotationR\bsecurityB3\xd2Ƥ\xe1\x06\x02\b\x01Z)github.com/cncf/xds/go/xds/annotations/v3b\x06proto3"
+	"\bsecurity\x12\x1d.google.protobuf.FieldOptions\x18\xa7\x96\x9d/ \x01(\v2+.xds.annotations.v3.FieldSecurityAnnotationR\bsecurityB\xd2\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x16com.xds.annotations.v3B\rSecurityProtoP\x01Z7github.com/cncf/xds/go/xds/annotations/v3;annotationsv3\xa2\x02\x03XAX\xaa\x02\x12Xds.Annotations.V3\xca\x02\x12Xds\\Annotations\\V3\xe2\x02\x1eXds\\Annotations\\V3\\GPBMetadata\xea\x02\x14Xds::Annotations::V3b\x06proto3"
 
 var (
 	file_xds_annotations_v3_security_proto_rawDescOnce sync.Once

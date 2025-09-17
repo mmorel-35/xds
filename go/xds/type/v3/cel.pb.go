@@ -4,13 +4,13 @@
 // 	protoc        (unknown)
 // source: xds/type/v3/cel.proto
 
-package v3
+package typev3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	expr "cel.dev/expr"
+	_ "github.com/cncf/xds/go/buf/validate"
+	expr "github.com/cncf/xds/go/cel/expr"
+	v1alpha1 "github.com/cncf/xds/go/google/api/expr/v1alpha1"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
-	v1alpha1 "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
@@ -240,8 +240,8 @@ const file_xds_type_v3_cel_proto_rawDesc = "" +
 	"\x0eexpr_specifier\"\x9c\x01\n" +
 	"\x10CelExtractString\x12E\n" +
 	"\fexpr_extract\x18\x01 \x01(\v2\x1a.xds.type.v3.CelExpressionB\x06\xbaH\x03\xc8\x01\x01R\vexprExtract\x12A\n" +
-	"\rdefault_value\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueR\fdefaultValueBP\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.type.v3B\bCelProtoP\x01Z\"github.com/cncf/xds/go/xds/type/v3b\x06proto3"
+	"\rdefault_value\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueR\fdefaultValueB\x9c\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.type.v3B\bCelProtoP\x01Z)github.com/cncf/xds/go/xds/type/v3;typev3\xa2\x02\x03XTX\xaa\x02\vXds.Type.V3\xca\x02\vXds\\Type\\V3\xe2\x02\x17Xds\\Type\\V3\\GPBMetadata\xea\x02\rXds::Type::V3b\x06proto3"
 
 var (
 	file_xds_type_v3_cel_proto_rawDescOnce sync.Once

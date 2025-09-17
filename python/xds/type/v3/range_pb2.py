@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17xds/type/v3/range.proto\x12\x0bxds.type.v3\"4\n\nInt64Range\x12\x14\n\x05start\x18\x01 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x03R\x03\x65nd\"4\n\nInt32Range\x12\x14\n\x05start\x18\x01 \x01(\x05R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x05R\x03\x65nd\"5\n\x0b\x44oubleRange\x12\x14\n\x05start\x18\x01 \x01(\x01R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x01R\x03\x65ndBJ\n\x16\x63om.github.xds.type.v3B\nRangeProtoP\x01Z\"github.com/cncf/xds/go/xds/type/v3b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17xds/type/v3/range.proto\x12\x0bxds.type.v3\"4\n\nInt64Range\x12\x14\n\x05start\x18\x01 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x03R\x03\x65nd\"4\n\nInt32Range\x12\x14\n\x05start\x18\x01 \x01(\x05R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x05R\x03\x65nd\"5\n\x0b\x44oubleRange\x12\x14\n\x05start\x18\x01 \x01(\x01R\x05start\x12\x10\n\x03\x65nd\x18\x02 \x01(\x01R\x03\x65ndB\x96\x01\n\x0f\x63om.xds.type.v3B\nRangeProtoP\x01Z)github.com/cncf/xds/go/xds/type/v3;typev3\xa2\x02\x03XTX\xaa\x02\x0bXds.Type.V3\xca\x02\x0bXds\\Type\\V3\xe2\x02\x17Xds\\Type\\V3\\GPBMetadata\xea\x02\rXds::Type::V3b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.type.v3.range_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.github.xds.type.v3B\nRangeProtoP\001Z\"github.com/cncf/xds/go/xds/type/v3'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.xds.type.v3B\nRangeProtoP\001Z)github.com/cncf/xds/go/xds/type/v3;typev3\242\002\003XTX\252\002\013Xds.Type.V3\312\002\013Xds\\Type\\V3\342\002\027Xds\\Type\\V3\\GPBMetadata\352\002\rXds::Type::V3'
   _globals['_INT64RANGE']._serialized_start=40
   _globals['_INT64RANGE']._serialized_end=92
   _globals['_INT32RANGE']._serialized_start=94

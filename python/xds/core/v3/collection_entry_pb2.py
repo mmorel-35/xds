@@ -28,14 +28,14 @@ from xds.core.v3 import resource_locator_pb2 as xds_dot_core_dot_v3_dot_resource
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"xds/core/v3/collection_entry.proto\x12\x0bxds.core.v3\x1a\x19google/protobuf/any.proto\x1a\x1fxds/annotations/v3/status.proto\x1a\"xds/core/v3/resource_locator.proto\x1a\x1b\x62uf/validate/validate.proto\"\xc5\x02\n\x0f\x43ollectionEntry\x12\x38\n\x07locator\x18\x01 \x01(\x0b\x32\x1c.xds.core.v3.ResourceLocatorH\x00R\x07locator\x12M\n\x0cinline_entry\x18\x02 \x01(\x0b\x32(.xds.core.v3.CollectionEntry.InlineEntryH\x00R\x0binlineEntry\x1a\x8b\x01\n\x0bInlineEntry\x12\x30\n\x04name\x18\x01 \x01(\tB\x1c\xbaH\x19r\x17\x32\x15^[0-9a-zA-Z_\\-\\.~:]+$R\x04name\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12\x30\n\x08resource\x18\x03 \x01(\x0b\x32\x14.google.protobuf.AnyR\x08resourceB\x1b\n\x12resource_specifier\x12\x05\xbaH\x02\x08\x01\x42\\\n\x16\x63om.github.xds.core.v3B\x14\x43ollectionEntryProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"xds/core/v3/collection_entry.proto\x12\x0bxds.core.v3\x1a\x19google/protobuf/any.proto\x1a\x1fxds/annotations/v3/status.proto\x1a\"xds/core/v3/resource_locator.proto\x1a\x1b\x62uf/validate/validate.proto\"\xc5\x02\n\x0f\x43ollectionEntry\x12\x38\n\x07locator\x18\x01 \x01(\x0b\x32\x1c.xds.core.v3.ResourceLocatorH\x00R\x07locator\x12M\n\x0cinline_entry\x18\x02 \x01(\x0b\x32(.xds.core.v3.CollectionEntry.InlineEntryH\x00R\x0binlineEntry\x1a\x8b\x01\n\x0bInlineEntry\x12\x30\n\x04name\x18\x01 \x01(\tB\x1c\xbaH\x19r\x17\x32\x15^[0-9a-zA-Z_\\-\\.~:]+$R\x04name\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12\x30\n\x08resource\x18\x03 \x01(\x0b\x32\x14.google.protobuf.AnyR\x08resourceB\x1b\n\x12resource_specifier\x12\x05\xbaH\x02\x08\x01\x42\xa8\x01\n\x0f\x63om.xds.core.v3B\x14\x43ollectionEntryProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\x0bXds.Core.V3\xca\x02\x0bXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3\xd2\xc6\xa4\xe1\x06\x02\x08\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.core.v3.collection_entry_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.github.xds.core.v3B\024CollectionEntryProtoP\001Z\"github.com/cncf/xds/go/xds/core/v3\322\306\244\341\006\002\010\001'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.xds.core.v3B\024CollectionEntryProtoP\001Z)github.com/cncf/xds/go/xds/core/v3;corev3\242\002\003XCX\252\002\013Xds.Core.V3\312\002\013Xds\\Core\\V3\342\002\027Xds\\Core\\V3\\GPBMetadata\352\002\rXds::Core::V3\322\306\244\341\006\002\010\001'
   _globals['_COLLECTIONENTRY_INLINEENTRY'].fields_by_name['name']._loaded_options = None
   _globals['_COLLECTIONENTRY_INLINEENTRY'].fields_by_name['name']._serialized_options = b'\272H\031r\0272\025^[0-9a-zA-Z_\\-\\.~:]+$'
   _globals['_COLLECTIONENTRY'].oneofs_by_name['resource_specifier']._loaded_options = None

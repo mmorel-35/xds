@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/type/v3/typed_struct.proto
 
-package v3
+package typev3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -109,8 +109,8 @@ const file_xds_type_v3_typed_struct_proto_rawDesc = "" +
 	"\x1exds/type/v3/typed_struct.proto\x12\vxds.type.v3\x1a\x1cgoogle/protobuf/struct.proto\"W\n" +
 	"\vTypedStruct\x12\x19\n" +
 	"\btype_url\x18\x01 \x01(\tR\atypeUrl\x12-\n" +
-	"\x05value\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x05valueBP\n" +
-	"\x16com.github.xds.type.v3B\x10TypedStructProtoP\x01Z\"github.com/cncf/xds/go/xds/type/v3b\x06proto3"
+	"\x05value\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x05valueB\x9c\x01\n" +
+	"\x0fcom.xds.type.v3B\x10TypedStructProtoP\x01Z)github.com/cncf/xds/go/xds/type/v3;typev3\xa2\x02\x03XTX\xaa\x02\vXds.Type.V3\xca\x02\vXds\\Type\\V3\xe2\x02\x17Xds\\Type\\V3\\GPBMetadata\xea\x02\rXds::Type::V3b\x06proto3"
 
 var (
 	file_xds_type_v3_typed_struct_proto_rawDescOnce sync.Once

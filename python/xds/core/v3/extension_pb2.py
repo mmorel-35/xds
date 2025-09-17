@@ -26,14 +26,14 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bxds/core/v3/extension.proto\x12\x0bxds.core.v3\x1a\x1b\x62uf/validate/validate.proto\x1a\x19google/protobuf/any.proto\"t\n\x14TypedExtensionConfig\x12\x1b\n\x04name\x18\x01 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x04name\x12?\n\x0ctyped_config\x18\x02 \x01(\x0b\x32\x14.google.protobuf.AnyB\x06\xbaH\x03\xc8\x01\x01R\x0btypedConfigBN\n\x16\x63om.github.xds.core.v3B\x0e\x45xtensionProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bxds/core/v3/extension.proto\x12\x0bxds.core.v3\x1a\x1b\x62uf/validate/validate.proto\x1a\x19google/protobuf/any.proto\"t\n\x14TypedExtensionConfig\x12\x1b\n\x04name\x18\x01 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x04name\x12?\n\x0ctyped_config\x18\x02 \x01(\x0b\x32\x14.google.protobuf.AnyB\x06\xbaH\x03\xc8\x01\x01R\x0btypedConfigB\x9a\x01\n\x0f\x63om.xds.core.v3B\x0e\x45xtensionProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\x0bXds.Core.V3\xca\x02\x0bXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'xds.core.v3.extension_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.github.xds.core.v3B\016ExtensionProtoP\001Z\"github.com/cncf/xds/go/xds/core/v3'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.xds.core.v3B\016ExtensionProtoP\001Z)github.com/cncf/xds/go/xds/core/v3;corev3\242\002\003XCX\252\002\013Xds.Core.V3\312\002\013Xds\\Core\\V3\342\002\027Xds\\Core\\V3\\GPBMetadata\352\002\rXds::Core::V3'
   _globals['_TYPEDEXTENSIONCONFIG'].fields_by_name['name']._loaded_options = None
   _globals['_TYPEDEXTENSIONCONFIG'].fields_by_name['name']._serialized_options = b'\272H\004r\002\020\001'
   _globals['_TYPEDEXTENSIONCONFIG'].fields_by_name['typed_config']._loaded_options = None

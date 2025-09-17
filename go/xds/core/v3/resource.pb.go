@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/resource.proto
 
-package v3
+package corev3
 
 import (
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
@@ -97,8 +97,8 @@ const file_xds_core_v3_resource_proto_rawDesc = "" +
 	"\bResource\x12-\n" +
 	"\x04name\x18\x01 \x01(\v2\x19.xds.core.v3.ResourceNameR\x04name\x12\x18\n" +
 	"\aversion\x18\x02 \x01(\tR\aversion\x120\n" +
-	"\bresource\x18\x03 \x01(\v2\x14.google.protobuf.AnyR\bresourceBU\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\rResourceProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"\bresource\x18\x03 \x01(\v2\x14.google.protobuf.AnyR\bresourceB\xa1\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\rResourceProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_resource_proto_rawDescOnce sync.Once

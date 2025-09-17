@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: xds/type/matcher/v3/range.proto
 
-package v3
+package matcherv3
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cncf/xds/go/buf/validate"
 	v3 "github.com/cncf/xds/go/xds/type/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -351,9 +351,9 @@ const file_xds_type_matcher_v3_range_proto_rawDesc = "" +
 	"\x0erange_matchers\x18\x01 \x03(\v24.xds.type.matcher.v3.DoubleRangeMatcher.RangeMatcherR\rrangeMatchers\x1a\x8b\x01\n" +
 	"\fRangeMatcher\x12:\n" +
 	"\x06ranges\x18\x01 \x03(\v2\x18.xds.type.v3.DoubleRangeB\b\xbaH\x05\x92\x01\x02\b\x01R\x06ranges\x12?\n" +
-	"\bon_match\x18\x02 \x01(\v2$.xds.type.matcher.v3.Matcher.OnMatchR\aonMatchBZ\n" +
-	"\x1ecom.github.xds.type.matcher.v3B\n" +
-	"RangeProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3"
+	"\bon_match\x18\x02 \x01(\v2$.xds.type.matcher.v3.Matcher.OnMatchR\aonMatchB\xca\x01\n" +
+	"\x17com.xds.type.matcher.v3B\n" +
+	"RangeProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3"
 
 var (
 	file_xds_type_matcher_v3_range_proto_rawDescOnce sync.Once

@@ -26,14 +26,14 @@ from udpa.data.orca.v1 import orca_load_report_pb2 as udpa_dot_data_dot_orca_dot
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fudpa/service/orca/v1/orca.proto\x12\x14udpa.service.orca.v1\x1a(udpa/data/orca/v1/orca_load_report.proto\x1a\x1egoogle/protobuf/duration.proto\"\x89\x01\n\x15OrcaLoadReportRequest\x12\x42\n\x0freport_interval\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x0ereportInterval\x12,\n\x12request_cost_names\x18\x02 \x03(\tR\x10requestCostNames2w\n\x0eOpenRcaService\x12\x65\n\x11StreamCoreMetrics\x12+.udpa.service.orca.v1.OrcaLoadReportRequest\x1a!.udpa.data.orca.v1.OrcaLoadReport0\x01\x42`\n$com.github.udpa.udpa.service.orca.v1B\tOrcaProtoP\x01Z+github.com/cncf/xds/go/udpa/service/orca/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fudpa/service/orca/v1/orca.proto\x12\x14udpa.service.orca.v1\x1a(udpa/data/orca/v1/orca_load_report.proto\x1a\x1egoogle/protobuf/duration.proto\"\x89\x01\n\x15OrcaLoadReportRequest\x12\x42\n\x0freport_interval\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x0ereportInterval\x12,\n\x12request_cost_names\x18\x02 \x03(\tR\x10requestCostNames2w\n\x0eOpenRcaService\x12\x65\n\x11StreamCoreMetrics\x12+.udpa.service.orca.v1.OrcaLoadReportRequest\x1a!.udpa.data.orca.v1.OrcaLoadReport0\x01\x42\xcc\x01\n\x18\x63om.udpa.service.orca.v1B\tOrcaProtoP\x01Z2github.com/cncf/xds/go/udpa/service/orca/v1;orcav1\xa2\x02\x03USO\xaa\x02\x14Udpa.Service.Orca.V1\xca\x02\x14Udpa\\Service\\Orca\\V1\xe2\x02 Udpa\\Service\\Orca\\V1\\GPBMetadata\xea\x02\x17Udpa::Service::Orca::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'udpa.service.orca.v1.orca_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n$com.github.udpa.udpa.service.orca.v1B\tOrcaProtoP\001Z+github.com/cncf/xds/go/udpa/service/orca/v1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\030com.udpa.service.orca.v1B\tOrcaProtoP\001Z2github.com/cncf/xds/go/udpa/service/orca/v1;orcav1\242\002\003USO\252\002\024Udpa.Service.Orca.V1\312\002\024Udpa\\Service\\Orca\\V1\342\002 Udpa\\Service\\Orca\\V1\\GPBMetadata\352\002\027Udpa::Service::Orca::V1'
   _globals['_ORCALOADREPORTREQUEST']._serialized_start=132
   _globals['_ORCALOADREPORTREQUEST']._serialized_end=269
   _globals['_OPENRCASERVICE']._serialized_start=271

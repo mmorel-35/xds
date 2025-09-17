@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/core/v3/context_params.proto
 
-package v3
+package corev3
 
 import (
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
@@ -83,8 +83,8 @@ const file_xds_core_v3_context_params_proto_rawDesc = "" +
 	"\x06params\x18\x01 \x03(\v2&.xds.core.v3.ContextParams.ParamsEntryR\x06params\x1a9\n" +
 	"\vParamsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01BZ\xd2Ƥ\xe1\x06\x02\b\x01\n" +
-	"\x16com.github.xds.core.v3B\x12ContextParamsProtoP\x01Z\"github.com/cncf/xds/go/xds/core/v3b\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\xa6\x01\xd2Ƥ\xe1\x06\x02\b\x01\n" +
+	"\x0fcom.xds.core.v3B\x12ContextParamsProtoP\x01Z)github.com/cncf/xds/go/xds/core/v3;corev3\xa2\x02\x03XCX\xaa\x02\vXds.Core.V3\xca\x02\vXds\\Core\\V3\xe2\x02\x17Xds\\Core\\V3\\GPBMetadata\xea\x02\rXds::Core::V3b\x06proto3"
 
 var (
 	file_xds_core_v3_context_params_proto_rawDescOnce sync.Once

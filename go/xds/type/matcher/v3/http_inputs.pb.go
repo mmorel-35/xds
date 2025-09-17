@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/type/matcher/v3/http_inputs.proto
 
-package v3
+package matcherv3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -72,8 +72,8 @@ var File_xds_type_matcher_v3_http_inputs_proto protoreflect.FileDescriptor
 const file_xds_type_matcher_v3_http_inputs_proto_rawDesc = "" +
 	"\n" +
 	"%xds/type/matcher/v3/http_inputs.proto\x12\x13xds.type.matcher.v3\"\x1d\n" +
-	"\x1bHttpAttributesCelMatchInputB_\n" +
-	"\x1ecom.github.xds.type.matcher.v3B\x0fHttpInputsProtoP\x01Z*github.com/cncf/xds/go/xds/type/matcher/v3b\x06proto3"
+	"\x1bHttpAttributesCelMatchInputB\xcf\x01\n" +
+	"\x17com.xds.type.matcher.v3B\x0fHttpInputsProtoP\x01Z4github.com/cncf/xds/go/xds/type/matcher/v3;matcherv3\xa2\x02\x03XTM\xaa\x02\x13Xds.Type.Matcher.V3\xca\x02\x13Xds\\Type\\Matcher\\V3\xe2\x02\x1fXds\\Type\\Matcher\\V3\\GPBMetadata\xea\x02\x16Xds::Type::Matcher::V3b\x06proto3"
 
 var (
 	file_xds_type_matcher_v3_http_inputs_proto_rawDescOnce sync.Once

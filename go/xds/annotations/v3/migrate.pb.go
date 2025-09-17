@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: xds/annotations/v3/migrate.proto
 
-package v3
+package annotationsv3
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -258,7 +258,8 @@ const file_xds_annotations_v3_migrate_proto_rawDesc = "" +
 	"\rfield_migrate\x12\x1d.google.protobuf.FieldOptions\x18\xce\xe9\xed5 \x01(\v2*.xds.annotations.v3.FieldMigrateAnnotationR\ffieldMigrate:i\n" +
 	"\fenum_migrate\x12\x1c.google.protobuf.EnumOptions\x18\xce\xe9\xed5 \x01(\v2%.xds.annotations.v3.MigrateAnnotationR\venumMigrate:y\n" +
 	"\x12enum_value_migrate\x12!.google.protobuf.EnumValueOptions\x18\xce\xe9\xed5 \x01(\v2%.xds.annotations.v3.MigrateAnnotationR\x10enumValueMigrate:m\n" +
-	"\ffile_migrate\x12\x1c.google.protobuf.FileOptions\x18\xce\xe9\xed5 \x01(\v2).xds.annotations.v3.FileMigrateAnnotationR\vfileMigrateB+Z)github.com/cncf/xds/go/xds/annotations/v3b\x06proto3"
+	"\ffile_migrate\x12\x1c.google.protobuf.FileOptions\x18\xce\xe9\xed5 \x01(\v2).xds.annotations.v3.FileMigrateAnnotationR\vfileMigrateB\xc9\x01\n" +
+	"\x16com.xds.annotations.v3B\fMigrateProtoP\x01Z7github.com/cncf/xds/go/xds/annotations/v3;annotationsv3\xa2\x02\x03XAX\xaa\x02\x12Xds.Annotations.V3\xca\x02\x12Xds\\Annotations\\V3\xe2\x02\x1eXds\\Annotations\\V3\\GPBMetadata\xea\x02\x14Xds::Annotations::V3b\x06proto3"
 
 var (
 	file_xds_annotations_v3_migrate_proto_rawDescOnce sync.Once
