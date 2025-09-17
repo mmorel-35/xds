@@ -1,0 +1,23 @@
+version: v1
+plugins:
+  # Go protobuf generation
+  - plugin: buf.build/protocolbuffers/go:v1.34.2
+    out: go
+    opt:
+      - paths=source_relative
+  # Go gRPC generation (for services)
+  - plugin: buf.build/grpc/go:v1.5.1
+    out: go
+    opt:
+      - paths=source_relative
+  # Go protoc-gen-validate generation
+  - plugin: buf.build/envoyproxy/protoc-gen-validate-go:v1.0.4
+    out: go
+    opt:
+      - paths=source_relative
+  # Python protobuf generation  
+  - plugin: buf.build/protocolbuffers/python:v27.3
+    out: python
+  # Python protoc-gen-validate generation
+  - plugin: buf.build/envoyproxy/protoc-gen-validate-python:v1.0.4
+    out: python
