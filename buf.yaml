@@ -1,8 +1,6 @@
 version: v2
 modules:
   - path: .
-    excludes:
-      - udpa
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/envoyproxy/protoc-gen-validate

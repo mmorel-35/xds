@@ -26,11 +26,14 @@ echo "Updating Buf dependencies..."
 buf dep update
 
 # Generate protobuf files
-echo "Generating Go and Python protobuf files..."
+echo "Generating Go and Python protobuf files (including UDPA)..."
 buf generate
 
+# Setup Python package structure
+echo "Setting up Python package structure..."
+find python -type d -exec touch {}/__init__.py \;
+
 # Ensure Python validate package is properly structured
-echo "Setting up Python validate package..."
 mkdir -p python/validate
 if [ ! -f python/validate/__init__.py ]; then
     touch python/validate/__init__.py
@@ -51,10 +54,11 @@ fi
 echo "Protobuf generation completed successfully!"
 echo ""
 echo "Generated files:"
-echo "  Go:     $(find go -name "*.go" | wc -l) files in go/"
-echo "  Python: $(find python -name "*.py" | wc -l) files in python/"
+echo "  Go:     $(find go -name "*.go" | wc -l) files in go/ (includes XDS and UDPA)"
+echo "  Python: $(find python -name "*.py" | wc -l) files in python/ (includes XDS and UDPA)"
 echo ""
 echo "Includes:"
 echo "  - Standard protobuf files (.pb.go, _pb2.py)"
 echo "  - gRPC service files (_grpc.pb.go)"
-echo "  - Validation files (.pb.validate.go)"
+echo "  - Validation files (.pb.validate.go for Go)"
+echo "  - UDPA protobuf files (both XDS and UDPA packages)"
