@@ -1,5 +1,6 @@
-# Use Buf for Go code generation
-# This replaces the legacy custom Bazel proto generation
+# Buf-based Go code generation
+# Use: bazel build //go:generate_go to trigger Go proto generation
+# Generated files will be placed in go/ directory
 
 sh_binary(
     name = "generate_go",
@@ -15,5 +16,12 @@ sh_binary(
 alias(
     name = "go",
     actual = ":generate_go", 
+    visibility = ["//visibility:public"],
+)
+
+# Documentation target
+filegroup(
+    name = "README",
+    srcs = [],
     visibility = ["//visibility:public"],
 )

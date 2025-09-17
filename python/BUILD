@@ -1,5 +1,6 @@
-# Use Buf for Python code generation  
-# This replaces the legacy custom Bazel proto generation
+# Buf-based Python code generation
+# Use: bazel build //python:generate_python to trigger Python proto generation
+# Generated files will be placed in python/ directory
 
 sh_binary(
     name = "generate_python",
@@ -15,5 +16,12 @@ sh_binary(
 alias(
     name = "python",
     actual = ":generate_python",
+    visibility = ["//visibility:public"],
+)
+
+# Documentation target
+filegroup(
+    name = "README",
+    srcs = [],
     visibility = ["//visibility:public"],
 )
