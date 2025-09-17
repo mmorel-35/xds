@@ -12,6 +12,12 @@ plugins:
     out: go
     opt:
       - paths=source_relative
+  # Go protoc-gen-validate generation
+  - local: protoc-gen-validate
+    out: go
+    opt:
+      - paths=source_relative
+      - lang=go
   # Python protobuf generation  
   - remote: buf.build/protocolbuffers/python:v27.3
     out: python
