@@ -4,6 +4,13 @@ managed:
   override:
     - file_option: go_package_prefix
       value: github.com/cncf/xds/go
+  disable:
+    - file_option: go_package_prefix
+      module: buf.build/bufbuild/protovalidate
+    - file_option: go_package_prefix  
+      module: buf.build/googleapis/googleapis
+    - file_option: go_package_prefix
+      module: buf.build/google/cel-spec
 plugins:
   - remote: buf.build/protocolbuffers/go
     out: go

@@ -1,0 +1,4 @@
+# Ignore Bazel external dependencies  
+bazel-*/**
+# Ignore any generated files or build artifacts
+.git/**

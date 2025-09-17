@@ -7,7 +7,7 @@
 package matcherv3
 
 import (
-	_ "github.com/cncf/xds/go/buf/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	v3 "github.com/cncf/xds/go/xds/core/v3"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

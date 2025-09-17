@@ -7,10 +7,10 @@
 package typev3
 
 import (
-	_ "github.com/cncf/xds/go/buf/validate"
-	expr "github.com/cncf/xds/go/cel/expr"
-	v1alpha1 "github.com/cncf/xds/go/google/api/expr/v1alpha1"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	expr "cel.dev/expr"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
+	v1alpha1 "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
