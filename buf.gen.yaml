@@ -20,5 +20,5 @@ plugins:
       - paths=source_relative
       - lang=go
   # Python protobuf generation (includes validate.proto from dependencies)
-  - remote: buf.build/protocolbuffers/python:v27.3
+  - remote: buf.build/protocolbuffers/python:v29.1
     out: python

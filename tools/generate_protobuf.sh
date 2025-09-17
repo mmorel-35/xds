@@ -31,7 +31,12 @@ buf generate
 
 # Setup Python package structure
 echo "Setting up Python package structure..."
-find python -type d -exec touch {}/__init__.py \;
+find python -type d | while read dir; do
+    if [ ! -f "$dir/__init__.py" ]; then
+        touch "$dir/__init__.py"
+        echo "Created $dir/__init__.py"
+    fi
+done
 
 echo "Protobuf generation completed successfully!"
 echo ""
