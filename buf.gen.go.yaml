@@ -12,9 +12,8 @@ plugins:
     out: go
     opt:
       - paths=source_relative
-  # Go protoc-gen-validate generation (official plugin)
-  - local: protoc-gen-validate
+  # Go protoc-gen-validate generation (remote plugin)  
+  - remote: buf.build/bufbuild/validate-go:v1.0.4
     out: go
     opt:
       - paths=source_relative
-      - lang=go
