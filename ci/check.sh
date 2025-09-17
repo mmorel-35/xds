@@ -4,11 +4,13 @@ set -e
 
 bazel test --config=ci //...
 
-rm -rf go/xds go/udpa
+# Remove old generated files
+rm -rf go/xds go/udpa python/xds python/udpa
 
-tools/generate_lang_files_from_protos.py
+# Generate using Buf v2 configuration
+buf generate
 
-git add go/xds go/udpa
+git add go/xds go/udpa python/xds python/udpa
 
 echo "If this check fails, apply following diff:"
 git diff HEAD
