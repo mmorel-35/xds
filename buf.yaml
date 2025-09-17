@@ -1,0 +1,4 @@
+version: v1
+name: github.com/mmorel-35/xds
+modules:
+  - path: .

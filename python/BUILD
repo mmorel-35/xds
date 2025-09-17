@@ -1,8 +1,8 @@
-# Use Buf for Go code generation
+# Use Buf for Python code generation  
 # This replaces the legacy custom Bazel proto generation
 
 sh_binary(
-    name = "generate_go",
+    name = "generate_python",
     srcs = ["//tools:buf_generate.sh"],
     data = [
         "//:buf.gen.yaml",
@@ -13,7 +13,7 @@ sh_binary(
 
 # Alias for backward compatibility
 alias(
-    name = "go",
-    actual = ":generate_go", 
+    name = "python",
+    actual = ":generate_python",
     visibility = ["//visibility:public"],
 )
