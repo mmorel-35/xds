@@ -3,9 +3,7 @@ module github.com/cncf/xds/go
 go 1.24.5
 
 require (
-	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.35.2-20241127180247-a33202765966.1
 	cel.dev/expr v0.24.0
-	github.com/bufbuild/protovalidate-go v0.8.1
 	google.golang.org/genproto/googleapis/api v0.0.0-20250218202821-56aae31c358a
 	google.golang.org/grpc v1.72.0
 	google.golang.org/protobuf v1.36.5
