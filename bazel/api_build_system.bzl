@@ -25,6 +25,7 @@ _COMMON_PROTO_DEPS = [
     "@com_google_protobuf//:wrappers_proto",
     "@com_google_googleapis//google/api:http_proto",
     "@com_google_googleapis//google/rpc:status_proto",
+    "@buf_protovalidate//proto/protovalidate/buf/validate:validate_proto",
 ]
 
 def _proto_mapping(dep, proto_dep_map, proto_suffix):
