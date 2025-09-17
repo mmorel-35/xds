@@ -25,7 +25,7 @@ _COMMON_PROTO_DEPS = [
     "@com_google_protobuf//:wrappers_proto",
     "@com_google_googleapis//google/api:http_proto",
     "@com_google_googleapis//google/rpc:status_proto",
-    "@buf_protovalidate//proto/protovalidate/buf/validate:validate_proto",
+    "@protovalidate//proto/protovalidate/buf/validate:validate_proto",
 ]
 
 def _proto_mapping(dep, proto_dep_map, proto_suffix):
@@ -57,7 +57,7 @@ def _xds_cc_py_proto_library(
     cc_proto_library_name = name + _CC_PROTO_SUFFIX
     cc_proto_library(
         name = cc_proto_library_name,
-        deps = [relative_name],
+        deps = [relative_name, "@protovalidate-cc//buf/validate:validator"],
         visibility = ["//visibility:public"],
     )
 
@@ -112,6 +112,7 @@ def xds_proto_package(
             "@org_golang_google_protobuf//types/known/structpb:go_default_library",
             "@org_golang_google_protobuf//types/known/timestamppb:go_default_library",
             "@org_golang_google_protobuf//types/known/wrapperspb:go_default_library",
+            "@protovalidate_go//:protovalidate_go",
         ]).to_list(),
     )
 

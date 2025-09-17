@@ -11,7 +11,8 @@ version = "0.1.0"
 description = "xds Protocol Buffer Messages"
 requires-python = ">=3.7"  # Or the appropriate minimum Python version
 dependencies = [
-    "protobuf==5.29.3"
+    "protobuf==5.29.3",
+    "protovalidate==0.9.0"
 ]
 
 [project.optional-dependencies]
