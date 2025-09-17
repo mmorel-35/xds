@@ -1,0 +1,20 @@
+# Example demonstrating buf-Gazelle integration with existing API build system
+load("//bazel:api_build_system.bzl", "xds_proto_package", "xds_proto_package_buf")
+
+licenses(["notice"])  # Apache 2
+
+# Legacy Bazel approach (existing)
+xds_proto_package(deps = ["//xds/annotations/v3:pkg"])
+
+# New buf-Gazelle approach (recommended for new development)
+# Note: This creates coordination targets, actual BUILD files are managed by Gazelle
+xds_proto_package_buf(deps = ["//xds/annotations/v3:pkg"])
+
+# The buf approach generates files that Gazelle automatically manages:
+# - //go/xds/core/v3:core (Go library created by Gazelle)
+# - //python/xds/core/v3:core_py_proto (Python library, if BUILD file exists)
+#
+# Workflow:
+# 1. Run: tools/update_buf_and_gazelle.sh  
+# 2. Build: bazel build //go/xds/core/v3:core
+# 3. Or build all: bazel build //go/...

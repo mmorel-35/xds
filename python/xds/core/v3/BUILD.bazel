@@ -1,0 +1,21 @@
+# Generated BUILD file for buf-generated Python protobuf files
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "core_py_proto",
+    srcs = [
+        "authority_pb2.py",
+        "cidr_pb2.py", 
+        "collection_entry_pb2.py",
+        "context_params_pb2.py",
+        "extension_pb2.py",
+        "resource_pb2.py",
+        "resource_locator_pb2.py",
+        "resource_name_pb2.py",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//python/validate:validate_py_proto",
+        "//python/xds/annotations/v3:annotations_py_proto",
+    ],
+)

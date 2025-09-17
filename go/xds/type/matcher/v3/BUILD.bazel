@@ -1,0 +1,34 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "matcher",
+    srcs = [
+        "cel.pb.go",
+        "cel.pb.validate.go",
+        "domain.pb.go",
+        "domain.pb.validate.go",
+        "http_inputs.pb.go",
+        "http_inputs.pb.validate.go",
+        "ip.pb.go",
+        "ip.pb.validate.go",
+        "matcher.pb.go",
+        "matcher.pb.validate.go",
+        "range.pb.go",
+        "range.pb.validate.go",
+        "regex.pb.go",
+        "regex.pb.validate.go",
+        "string.pb.go",
+        "string.pb.validate.go",
+    ],
+    importpath = "github.com/cncf/xds/go/xds/type/matcher/v3",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//go/xds/annotations/v3:annotations",
+        "//go/xds/core/v3:core",
+        "//go/xds/type/v3:type",
+        "@com_envoyproxy_protoc_gen_validate//validate:go_default_library",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/anypb",
+    ],
+)

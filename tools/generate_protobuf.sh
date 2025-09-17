@@ -4,6 +4,9 @@
 
 set -e
 
+# Add /tmp to PATH if buf is installed there
+export PATH="/tmp:$PATH"
+
 echo "Generating protobuf files using Buf with separate configs per language..."
 
 # Ensure buf is available

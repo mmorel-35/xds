@@ -4,9 +4,9 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 # gazelle:proto disable_global
 gazelle(name = "gazelle")
 
-# Target for coordinating buf generation and Gazelle updates
+# Create a target for coordinating buf generation and Gazelle updates
 sh_binary(
-    name = "update_buf_and_gazelle",
+    name = "update_buf_and_gazelle", 
     srcs = ["tools/update_buf_and_gazelle.sh"],
     visibility = ["//visibility:public"],
 )
