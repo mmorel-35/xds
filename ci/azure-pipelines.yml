@@ -17,11 +17,15 @@ jobs:
       key: './WORKSPACE | ./.bazel* | **/*.bzl'
       path: $(Agent.TempDirectory)/tmp
 
-  - bash: ci/check.sh
-    env:
-      TEST_TMPDIR: $(Agent.TempDirectory)/tmp
+  - bash: |
+      # Install Buf CLI
+      BUF_VERSION="1.57.2"
+      curl -sSL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-$(uname -s)-$(uname -m)" -o /usr/local/bin/buf
+      chmod +x /usr/local/bin/buf
+      buf --version
+    displayName: 'Install Buf CLI'
 
-  - bash: tools/generate_lang_files_from_protos.py && test -z "$(git status --porcelain)"
+  - bash: ci/check.sh
     env:
       TEST_TMPDIR: $(Agent.TempDirectory)/tmp
 
