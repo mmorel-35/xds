@@ -55,7 +55,7 @@ message Matcher {
       message SinglePredicate {
         // Protocol-specific specification of input field to match on.
         // [#extension-category: envoy.matching.common_inputs]
-        core.v3.TypedExtensionConfig input = 1 [(buf.validate.field).message = {required: true}];
+        core.v3.TypedExtensionConfig input = 1 [(buf.validate.field).required = true];
 
         oneof matcher {
           option (buf.validate.oneof).required = true;
@@ -94,10 +94,10 @@ message Matcher {
     // An individual matcher.
     message FieldMatcher {
       // Determines if the match succeeds.
-      Predicate predicate = 1 [(buf.validate.field).message = {required: true}];
+      Predicate predicate = 1 [(buf.validate.field).required = true];
 
       // What to do if the match succeeds.
-      OnMatch on_match = 2 [(buf.validate.field).message = {required: true}];
+      OnMatch on_match = 2 [(buf.validate.field).required = true];
     }
 
     // A list of matchers. First match wins.
@@ -111,7 +111,7 @@ message Matcher {
     }
 
     // Protocol-specific specification of input field to match on.
-    core.v3.TypedExtensionConfig input = 1 [(buf.validate.field).message = {required: true}];
+    core.v3.TypedExtensionConfig input = 1 [(buf.validate.field).required = true];
 
     // Exact or prefix match maps in which to look up the input value.
     // If the lookup succeeds, the match is considered successful, and
