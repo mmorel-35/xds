@@ -1,7 +1,12 @@
-version: v1
-build:
-  excludes:
-    - udpa
+version: v2
+modules:
+  - path: .
+    excludes:
+      - udpa
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/envoyproxy/protoc-gen-validate
+  - buf.build/google/cel-spec
 lint:
   use:
     - DEFAULT
