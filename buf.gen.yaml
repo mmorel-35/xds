@@ -1,8 +1,8 @@
 version: v1
 plugins:
-  - plugin: go
+  - plugin: buf.build/protocolbuffers/go
     out: go
     opt:
       - paths=source_relative
-  - plugin: python
+  - plugin: buf.build/protocolbuffers/python
     out: python
