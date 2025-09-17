@@ -7,6 +7,11 @@ deps:
     commit: 52f32327d4b045a79293a6ad4e7e1236
     digest: shake256:ddff976f6322abaecd49ff0b271b7f8dec485046bafc52fe31f3272b555fa2829328be24d71ececefca38c87319173a31f1e931984066531b6ca2016b3598146
   - remote: buf.build
+    owner: google
+    repository: cel-spec
+    commit: dffb8c8cf7814e96a7c06b6a5ac72fdc
+    digest: shake256:532025e30281fc0c3a26d6446cd4ebc98e82322800dda3c12ab5a6c0b24285c468ccd824e72fbd7f64510593882c8db1bfea7deb80603f2c9c1a38cd40847252
+  - remote: buf.build
     owner: googleapis
     repository: googleapis
     commit: 61b203b9a9164be9a834f58c37be6f62

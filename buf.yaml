@@ -3,3 +3,4 @@ name: github.com/cncf/xds
 deps:
   - buf.build/bufbuild/protovalidate
   - buf.build/googleapis/googleapis
+  - buf.build/google/cel-spec

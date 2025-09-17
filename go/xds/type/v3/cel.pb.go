@@ -8,6 +8,7 @@ package v3
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	expr "cel.dev/expr"
 	_ "github.com/cncf/xds/go/xds/annotations/v3"
 	v1alpha1 "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -34,6 +35,14 @@ type CelExpression struct {
 	//	*CelExpression_ParsedExpr
 	//	*CelExpression_CheckedExpr
 	ExprSpecifier isCelExpression_ExprSpecifier `protobuf_oneof:"expr_specifier"`
+	// Parsed expression in abstract syntax tree (AST) form.
+	//
+	// If “cel_expr_checked“ is set, this field is not used.
+	CelExprParsed *expr.ParsedExpr `protobuf:"bytes,3,opt,name=cel_expr_parsed,json=celExprParsed,proto3" json:"cel_expr_parsed,omitempty"`
+	// Parsed expression in abstract syntax tree (AST) form that has been successfully type checked.
+	//
+	// If set, takes precedence over “cel_expr_parsed“.
+	CelExprChecked *expr.CheckedExpr `protobuf:"bytes,4,opt,name=cel_expr_checked,json=celExprChecked,proto3" json:"cel_expr_checked,omitempty"`
 	// Unparsed expression in string form. For example, “request.headers['x-env'] == 'prod'“ will
 	// get “x-env“ header value and compare it with “prod“.
 	// Check the `Common Expression Language <https://github.com/google/cel-spec>`_ for more details.
@@ -97,6 +106,20 @@ func (x *CelExpression) GetCheckedExpr() *v1alpha1.CheckedExpr {
 		if x, ok := x.ExprSpecifier.(*CelExpression_CheckedExpr); ok {
 			return x.CheckedExpr
 		}
+	}
+	return nil
+}
+
+func (x *CelExpression) GetCelExprParsed() *expr.ParsedExpr {
+	if x != nil {
+		return x.CelExprParsed
+	}
+	return nil
+}
+
+func (x *CelExpression) GetCelExprChecked() *expr.CheckedExpr {
+	if x != nil {
+		return x.CelExprChecked
 	}
 	return nil
 }
@@ -206,11 +229,13 @@ var File_xds_type_v3_cel_proto protoreflect.FileDescriptor
 
 const file_xds_type_v3_cel_proto_rawDesc = "" +
 	"\n" +
-	"\x15xds/type/v3/cel.proto\x12\vxds.type.v3\x1a&google/api/expr/v1alpha1/checked.proto\x1a%google/api/expr/v1alpha1/syntax.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fxds/annotations/v3/status.proto\x1a\x1bbuf/validate/validate.proto\"\xe6\x01\n" +
+	"\x15xds/type/v3/cel.proto\x12\vxds.type.v3\x1a&google/api/expr/v1alpha1/checked.proto\x1a%google/api/expr/v1alpha1/syntax.proto\x1a\x16cel/expr/checked.proto\x1a\x15cel/expr/syntax.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fxds/annotations/v3/status.proto\x1a\x1bbuf/validate/validate.proto\"\xe5\x02\n" +
 	"\rCelExpression\x12K\n" +
 	"\vparsed_expr\x18\x01 \x01(\v2$.google.api.expr.v1alpha1.ParsedExprB\x02\x18\x01H\x00R\n" +
 	"parsedExpr\x12N\n" +
-	"\fchecked_expr\x18\x02 \x01(\v2%.google.api.expr.v1alpha1.CheckedExprB\x02\x18\x01H\x00R\vcheckedExpr\x12&\n" +
+	"\fchecked_expr\x18\x02 \x01(\v2%.google.api.expr.v1alpha1.CheckedExprB\x02\x18\x01H\x00R\vcheckedExpr\x12<\n" +
+	"\x0fcel_expr_parsed\x18\x03 \x01(\v2\x14.cel.expr.ParsedExprR\rcelExprParsed\x12?\n" +
+	"\x10cel_expr_checked\x18\x04 \x01(\v2\x15.cel.expr.CheckedExprR\x0ecelExprChecked\x12&\n" +
 	"\x0fcel_expr_string\x18\x05 \x01(\tR\rcelExprStringB\x10\n" +
 	"\x0eexpr_specifier\"\x9c\x01\n" +
 	"\x10CelExtractString\x12E\n" +
@@ -236,18 +261,22 @@ var file_xds_type_v3_cel_proto_goTypes = []any{
 	(*CelExtractString)(nil),       // 1: xds.type.v3.CelExtractString
 	(*v1alpha1.ParsedExpr)(nil),    // 2: google.api.expr.v1alpha1.ParsedExpr
 	(*v1alpha1.CheckedExpr)(nil),   // 3: google.api.expr.v1alpha1.CheckedExpr
-	(*wrapperspb.StringValue)(nil), // 4: google.protobuf.StringValue
+	(*expr.ParsedExpr)(nil),        // 4: cel.expr.ParsedExpr
+	(*expr.CheckedExpr)(nil),       // 5: cel.expr.CheckedExpr
+	(*wrapperspb.StringValue)(nil), // 6: google.protobuf.StringValue
 }
 var file_xds_type_v3_cel_proto_depIdxs = []int32{
 	2, // 0: xds.type.v3.CelExpression.parsed_expr:type_name -> google.api.expr.v1alpha1.ParsedExpr
 	3, // 1: xds.type.v3.CelExpression.checked_expr:type_name -> google.api.expr.v1alpha1.CheckedExpr
-	0, // 2: xds.type.v3.CelExtractString.expr_extract:type_name -> xds.type.v3.CelExpression
-	4, // 3: xds.type.v3.CelExtractString.default_value:type_name -> google.protobuf.StringValue
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	4, // 2: xds.type.v3.CelExpression.cel_expr_parsed:type_name -> cel.expr.ParsedExpr
+	5, // 3: xds.type.v3.CelExpression.cel_expr_checked:type_name -> cel.expr.CheckedExpr
+	0, // 4: xds.type.v3.CelExtractString.expr_extract:type_name -> xds.type.v3.CelExpression
+	6, // 5: xds.type.v3.CelExtractString.default_value:type_name -> google.protobuf.StringValue
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_xds_type_v3_cel_proto_init() }

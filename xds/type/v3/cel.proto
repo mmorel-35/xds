@@ -4,8 +4,8 @@ package xds.type.v3;
 
 import "google/api/expr/v1alpha1/checked.proto";
 import "google/api/expr/v1alpha1/syntax.proto";
-// import "cel/expr/checked.proto";
-// import "cel/expr/syntax.proto";
+import "cel/expr/checked.proto";
+import "cel/expr/syntax.proto";
 import "google/protobuf/wrappers.proto";
 
 import "xds/annotations/v3/status.proto";
@@ -41,12 +41,12 @@ message CelExpression {
   // Parsed expression in abstract syntax tree (AST) form.
   //
   // If ``cel_expr_checked`` is set, this field is not used.
-  // cel.expr.ParsedExpr cel_expr_parsed = 3;
+  cel.expr.ParsedExpr cel_expr_parsed = 3;
 
   // Parsed expression in abstract syntax tree (AST) form that has been successfully type checked.
   //
   // If set, takes precedence over ``cel_expr_parsed``.
-  // cel.expr.CheckedExpr cel_expr_checked = 4;
+  cel.expr.CheckedExpr cel_expr_checked = 4;
 
   // Unparsed expression in string form. For example, ``request.headers['x-env'] == 'prod'`` will
   // get ``x-env`` header value and compare it with ``prod``.
