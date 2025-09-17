@@ -21,9 +21,24 @@ jobs:
     env:
       TEST_TMPDIR: $(Agent.TempDirectory)/tmp
 
-  - bash: tools/generate_lang_files_from_protos.py && test -z "$(git status --porcelain)"
+  # Install buf CLI for protobuf generation
+  - bash: |
+      curl -sSL "https://github.com/bufbuild/buf/releases/download/v1.46.0/buf-Linux-x86_64" -o buf
+      chmod +x buf
+      sudo mv buf /usr/local/bin/
+    displayName: 'Install Buf CLI'
+
+  # Install Go for protoc-gen-validate (needed for Python validation generation)
+  - task: GoTool@0
+    displayName: "Install Go for protoc-gen-validate"
+    inputs:
+      version: '1.20.2'
+
+  # Use buf to generate protobuf files instead of Bazel
+  - bash: tools/generate_protobuf.sh && test -z "$(git status --porcelain)"
     env:
       TEST_TMPDIR: $(Agent.TempDirectory)/tmp
+    displayName: 'Generate protobuf files with Buf'
 
 - job: go_build
   pool:
