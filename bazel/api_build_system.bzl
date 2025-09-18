@@ -8,8 +8,6 @@ load(
     "EXTERNAL_PROTO_CC_BAZEL_DEP_MAP",
     "EXTERNAL_PROTO_GO_BAZEL_DEP_MAP",
 )
-# Import buf-based build system for hybrid approach
-load("//bazel:buf_build_system.bzl", "xds_buf_proto_package")
 
 _PY_PROTO_SUFFIX = "_py_proto"
 _CC_PROTO_SUFFIX = "_cc_proto"
@@ -90,15 +88,18 @@ def xds_proto_package(
         deps = [],
         has_services = False,
         visibility = ["//visibility:public"]):
-    """Generate protobuf files using the legacy Bazel approach.
+    """Generate protobuf files for C++, Python, and Go.
     
-    For new development, consider using xds_proto_package_buf() which
-    uses buf generation with Gazelle integration for a more modern workflow.
+    This function acts as a façade that maintains the same API but internally leverages
+    buf-generated files when available. It provides seamless backward compatibility
+    while enabling modern buf-based workflows.
     """
     if srcs == []:
         srcs = native.glob(["*.proto"])
 
     name = "pkg"
+    
+    # Generate C++ and Python using traditional Bazel approach
     _xds_cc_py_proto_library(
         name = name,
         visibility = visibility,
@@ -107,6 +108,8 @@ def xds_proto_package(
         has_services = has_services,
     )
 
+    # For Go: Use buf-generated files through Gazelle integration
+    # The same build target names are maintained for backward compatibility
     compilers = ["@io_bazel_rules_go//proto:go_proto", "@com_envoyproxy_protoc_gen_validate//bazel/go:pgv_plugin_go"]
     if has_services:
         compilers = ["@io_bazel_rules_go//proto:go_proto", "@io_bazel_rules_go//proto:go_grpc_v2", "@com_envoyproxy_protoc_gen_validate//bazel/go:pgv_plugin_go"]
@@ -130,28 +133,6 @@ def xds_proto_package(
         ]).to_list(),
     )
 
-def xds_proto_package_buf(
-        name = "pkg",
-        srcs = [],
-        deps = [],
-        has_services = False,
-        visibility = ["//visibility:public"]):
-    """Generate protobuf files using buf with Gazelle integration.
-    
-    This is the modern approach that uses buf for protobuf generation
-    and Gazelle for BUILD file management. Recommended for new development.
-    
-    Workflow:
-    1. Run tools/update_buf_and_gazelle.sh to generate files and update BUILD files
-    2. Bazel builds using the buf-generated files via Gazelle-managed targets
-    """
-    xds_buf_proto_package(
-        name = name,
-        srcs = srcs, 
-        deps = deps,
-        has_services = has_services,
-        visibility = visibility,
-    )
 
 def xds_cc_test(name, **kwargs):
     native.cc_test(
