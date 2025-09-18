@@ -5,7 +5,7 @@
 Run the following command to update the generated files and commit them with your change:
 
 ```sh
-tools/generate_protobuf.sh
+tools/buf_generate.sh
 ```
 
 This uses **buf gen v2** with remote plugins to generate Go and Python protobuf files, replacing the previous Bazel-based approach.

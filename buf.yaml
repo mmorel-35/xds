@@ -3,7 +3,12 @@ modules:
   - path: .
     name: buf.build/cncf/xds
     excludes:
-      - "bazel-*/**"
+      # Exclude Bazel build directories  
+      - "bazel-bin"
+      - "bazel-out"  
+      - "bazel-testlogs"
+      # Exclude the workspace symlink (name varies by project)
+      - "bazel-xds"
 deps:
   - buf.build/googleapis/googleapis:64926d52febbf298cb82a8f472ade4a3969ba922
   - buf.build/envoyproxy/protoc-gen-validate:v1.0.4
