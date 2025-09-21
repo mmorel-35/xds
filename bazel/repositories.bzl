@@ -31,7 +31,7 @@ def xds_api_dependencies():
         locations = REPOSITORY_LOCATIONS,
     )
     xds_http_archive(
-        name = "rules_python",
+        "rules_python",
         locations = REPOSITORY_LOCATIONS,
     )
 
