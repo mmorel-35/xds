@@ -3,14 +3,11 @@ load("@com_envoyproxy_protoc_gen_validate//bazel:repositories.bzl", "pgv_depende
 load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 
 # go version for rules_go
 GO_VERSION = "1.20.2"
 
 def xds_dependency_imports(go_version = GO_VERSION):
-    rules_proto_dependencies()
-    rules_proto_toolchains()
     protobuf_deps()
     go_rules_dependencies()
     go_register_toolchains(go_version = go_version)
