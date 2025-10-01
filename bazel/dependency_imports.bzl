@@ -3,9 +3,13 @@ load("@com_envoyproxy_protoc_gen_validate//bazel:repositories.bzl", "pgv_depende
 load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
+load("@rules_python//python:repositories.bzl", "py_repositories", "python_register_toolchains")
 
 # go version for rules_go
 GO_VERSION = "1.20.2"
+
+# Python version for rules_python
+PYTHON_VERSION = "3.11"
 
 def xds_dependency_imports(go_version = GO_VERSION):
     protobuf_deps()
@@ -13,6 +17,13 @@ def xds_dependency_imports(go_version = GO_VERSION):
     go_register_toolchains(go_version = go_version)
     gazelle_dependencies()
     pgv_dependencies()
+
+    # Initialize rules_python for WORKSPACE mode
+    py_repositories()
+    python_register_toolchains(
+        name = "python_3_11",
+        python_version = PYTHON_VERSION,
+    )
 
     # Needed for grpc's @com_github_grpc_grpc//bazel:python_rules.bzl
     # Used in place of calling grpc_deps() because it needs to be called before
