@@ -45,6 +45,25 @@ def xds_dependency_imports(go_version = GO_VERSION):
     # These repos also have transient dependencies - `build_external` allows them to use them.
     # TODO(phlax): remove `build_external` and pin all transients
     go_repository(
+        name = "org_golang_x_mod",
+        importpath = "golang.org/x/mod",
+        sum = "h1:SernR4v+D55NyBH2QiEQrlBAnj1ECL6AGrA5+dPaMY8=",
+        version = "v0.15.0",
+        build_external = "external",
+    )
+    go_repository(
+        name = "org_golang_x_tools",
+        importpath = "golang.org/x/tools",
+        sum = "h1:FvmRgNOcs3kOa+T20R1uhfP9F6HgG2mfxDv1vrx1Htc=",
+        version = "v0.17.0",
+        # Using vendored mode to avoid having to resolve all transitive dependencies manually
+        build_external = "vendored",
+        build_directives = [
+            "gazelle:resolve go golang.org/x/mod/semver @org_golang_x_mod//semver:go_default_library",
+            "gazelle:resolve go golang.org/x/mod/module @org_golang_x_mod//module:go_default_library",
+        ],
+    )
+    go_repository(
         name = "com_github_iancoleman_strcase",
         importpath = "github.com/iancoleman/strcase",
         sum = "h1:nTXanmYxhfFAMjZL34Ov6gkzEsSJZ5DbhxWjvSASxEI=",
@@ -86,6 +105,9 @@ def xds_dependency_imports(go_version = GO_VERSION):
         sum = "h1:/3+/2sWyXeMLzKd1bX+ixWKgEMsULrIivpDsuaF441o=",
         version = "v2.0.3",
         build_external = "external",
+        build_directives = [
+            "gazelle:resolve go golang.org/x/tools/imports @org_golang_x_tools//imports:go_default_library",
+        ],
         # project_url = "https://pkg.go.dev/github.com/lyft/protoc-gen-star",
         # last_update = "2023-01-06"
         # use_category = ["api"],
