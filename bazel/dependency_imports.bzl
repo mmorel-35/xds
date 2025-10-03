@@ -15,7 +15,7 @@ def xds_dependency_imports(go_version = GO_VERSION):
     protobuf_deps()
     go_rules_dependencies()
     go_register_toolchains(go_version = go_version)
-    gazelle_dependencies()
+    gazelle_dependencies(go_sdk = "go_sdk")
     pgv_dependencies()
 
     # Initialize rules_python for WORKSPACE mode
