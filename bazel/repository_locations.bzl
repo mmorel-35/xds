@@ -15,9 +15,9 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/envoyproxy/protoc-gen-validate/archive/refs/tags/v1.0.4.tar.gz"],
     ),
     com_github_grpc_grpc = dict(
-        sha256 = "7bf97c11cf3808d650a3a025bbf9c5f922c844a590826285067765dfd055d228",
-        strip_prefix = "grpc-1.74.1",
-        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.74.1.tar.gz"],
+        sha256 = "4a8aa99d5e24f80ea6b7ec95463e16af5bd91aa805e26c661ef6491ae3d2d23c",
+        strip_prefix = "grpc-1.72.0",
+        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.72.0.tar.gz"],
     ),
     com_google_googleapis = dict(
         # TODO(dio): Consider writing a Starlark macro for importing Google API proto.
