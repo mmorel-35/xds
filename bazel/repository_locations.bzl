@@ -15,9 +15,9 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/envoyproxy/protoc-gen-validate/archive/refs/tags/v1.0.4.tar.gz"],
     ),
     com_github_grpc_grpc = dict(
-        sha256 = "916f88a34f06b56432611aaa8c55befee96d0a7b7d7457733b9deeacbc016f99",
-        strip_prefix = "grpc-1.59.1",
-        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.59.1.tar.gz"],
+        sha256 = "7bf97c11cf3808d650a3a025bbf9c5f922c844a590826285067765dfd055d228",
+        strip_prefix = "grpc-1.74.1",
+        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.74.1.tar.gz"],
     ),
     com_google_googleapis = dict(
         # TODO(dio): Consider writing a Starlark macro for importing Google API proto.
@@ -28,9 +28,9 @@ REPOSITORY_LOCATIONS = dict(
         ],
     ),
     com_google_protobuf = dict(
-        sha256 = "3d32940e975c4ad9b8ba69640e78f5527075bae33ca2890275bf26b853c0962c",
-        strip_prefix = "protobuf-29.1",
-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.1.tar.gz"],
+        sha256 = "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e",
+        strip_prefix = "protobuf-29.3",
+        urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.3.tar.gz"],
     ),
     dev_cel = dict(
         sha256 = "5cba6b0029e727d1f4d8fd134de4e747cecc0bc293d026017d7edc48058d09f7",
@@ -44,9 +44,9 @@ REPOSITORY_LOCATIONS = dict(
         ],
     ),
     rules_python = dict(
-        sha256 = "5868e73107a8e85d8f323806e60cad7283f34b32163ea6ff1020cf27abef6036",
-        strip_prefix = "rules_python-0.25.0",
-        urls = ["https://github.com/bazelbuild/rules_python/releases/download/0.25.0/rules_python-0.25.0.tar.gz"],
+        sha256 = "2f5c284fbb4e86045c2632d3573fc006facbca5d1fa02976e89dc0cd5488b590",
+        strip_prefix = "rules_python-1.6.3",
+        urls = ["https://github.com/bazelbuild/rules_python/archive/1.6.3.tar.gz"],
     ),
     rules_proto = dict(
         sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
