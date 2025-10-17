@@ -44,7 +44,7 @@ message StringMatcher {
     string suffix = 3 [(buf.validate.field).string = {min_len: 1}];
 
     // The input string must match the regular expression specified here.
-    RegexMatcher safe_regex = 5 [(buf.validate.field).message = {required: true}];
+    RegexMatcher safe_regex = 5 [(buf.validate.field).required = true];
 
     // The input string must have the substring specified here.
     // Note: empty contains match is not allowed, please use regex instead.

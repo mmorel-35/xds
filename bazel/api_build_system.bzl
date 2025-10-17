@@ -1,5 +1,6 @@
 load("@com_github_grpc_grpc//bazel:python_rules.bzl", _py_proto_library = "py_proto_library")
 load("@com_google_protobuf//bazel:cc_proto_library.bzl", "cc_proto_library")
+load("@com_google_protobuf//bazel:proto_library.bzl", "proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
 load("@io_bazel_rules_go//proto:def.bzl", "go_grpc_library", "go_proto_library")
 load(
@@ -107,6 +108,7 @@ def xds_proto_package(
         proto = name,
         visibility = ["//visibility:public"],
         deps = depset([_go_proto_mapping(dep) for dep in deps] + [
+            "@build_buf_gen_go_bufbuild_protovalidate_protocolbuffers_go//buf/validate",
             "@org_golang_google_protobuf//types/known/anypb:go_default_library",
             "@org_golang_google_protobuf//types/known/durationpb:go_default_library",
             "@org_golang_google_protobuf//types/known/structpb:go_default_library",
