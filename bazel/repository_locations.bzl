@@ -9,7 +9,7 @@ REPOSITORY_LOCATIONS = dict(
         sha256 = "6e78f0e57de26801f6f564fa7c4a48dc8b36873e416257a92bbb0937eeac8446",
         urls = ["https://github.com/bazelbuild/bazel-skylib/releases/download/1.8.2/bazel-skylib-1.8.2.tar.gz"],
     ),
-    com_buf_protovalidate = dict(
+    com_github_bufbuild_protovalidate = dict(
         sha256 = "c4dbec77d6dc7cc660c0dc5bce6d871c807f797c45c75576947bd93f02a2aff1",
         strip_prefix = "protovalidate-1.0.0",
         urls = ["https://github.com/bufbuild/protovalidate/archive/refs/tags/v1.0.0.tar.gz"],
