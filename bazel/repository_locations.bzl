@@ -28,9 +28,9 @@ REPOSITORY_LOCATIONS = dict(
         ],
     ),
     com_google_protobuf = dict(
-        sha256 = "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e",
-        strip_prefix = "protobuf-29.3",
-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.3.tar.gz"],
+        sha256 = "9df0e9e8ebe39f4fbbb9cf7db3d811287fe3616b2f191eb2bf5eaa12539c881f",
+        strip_prefix = "protobuf-30.0",
+        urls = ["https://github.com/protocolbuffers/protobuf/archive/v30.0.tar.gz"],
     ),
     dev_cel = dict(
         sha256 = "5cba6b0029e727d1f4d8fd134de4e747cecc0bc293d026017d7edc48058d09f7",
