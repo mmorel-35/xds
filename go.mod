@@ -1,4 +1,4 @@
-module github.com/cncf/xds/go
+module github.com/cncf/xds
 
 go 1.24
 

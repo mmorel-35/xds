@@ -53,7 +53,7 @@ class GoConfig(LanguageConfig):
 
     def get_input_dir(self, bazel_bin: str, rule_dir: str) -> str:
         return os.path.join(
-            bazel_bin, rule_dir, "pkg_go_proto_", "github.com/cncf/xds/go", rule_dir
+            bazel_bin, rule_dir, "pkg_go_proto_", "github.com/cncf/xds", rule_dir
         )
 
 
