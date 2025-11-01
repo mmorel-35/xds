@@ -32,55 +32,7 @@ go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
 go_sdk.download(version = "1.24.6")
 
 go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
-go_deps.module(
-    path = "cel.dev/expr",
-    sum = "h1:56OvJKSH3hDGL0ml5uSxZmz3/3Pq4tJ+fb1unVLAFcY=",
-    version = "v0.24.0",
-)
-go_deps.module(
-    path = "github.com/envoyproxy/protoc-gen-validate",
-    sum = "h1:DEo3O99U8j4hBFwbJfrz9VtgcDfUKS7KJ7spH3d86P8=",
-    version = "v1.2.1",
-)
-go_deps.module(
-    path = "google.golang.org/genproto/googleapis/api",
-    sum = "h1:hjSy6tcFQZ171igDaN5QHOw2n6vx40juYbC/x67CEhc=",
-    version = "v0.0.0-20240903143218-8af14fe29dc1",
-)
-go_deps.module(
-    path = "google.golang.org/grpc",
-    sum = "h1:aHQeeJbo8zAkAa3pRzrVjZlbz6uSfeOXlJNQM0RAbz0=",
-    version = "v1.68.0",
-)
-go_deps.module(
-    path = "google.golang.org/protobuf",
-    sum = "h1:AYd7cD/uASjIL6Q9LiTjz8JLcrh/88q5UObnmY3aOOE=",
-    version = "v1.36.10",
-)
-go_deps.module(
-    indirect = True,
-    path = "golang.org/x/net",
-    sum = "h1:Mb7Mrk043xzHgnRM88suvJFwzVrRfHEHJEl5/71CKw0=",
-    version = "v0.34.0",
-)
-go_deps.module(
-    indirect = True,
-    path = "golang.org/x/sys",
-    sum = "h1:TPYlXGxvx1MGTn2GiZDhnjPA9wZzZeGKHHmKhHYvgaU=",
-    version = "v0.29.0",
-)
-go_deps.module(
-    indirect = True,
-    path = "golang.org/x/text",
-    sum = "h1:zyQAAkrwaneQ066sspRyJaG9VNi/YJ1NfzcGB3hZ/qo=",
-    version = "v0.21.0",
-)
-go_deps.module(
-    indirect = True,
-    path = "google.golang.org/genproto/googleapis/rpc",
-    sum = "h1:pPJltXNxVzT4pK9yD8vR9X75DaWYYmLGMsEvBfFQZzQ=",
-    version = "v0.0.0-20240903143218-8af14fe29dc1",
-)
+go_deps.from_file(go_mod = "//go:go.mod")
 use_repo(
     go_deps,
     "org_golang_google_genproto_googleapis_api",
