@@ -32,7 +32,21 @@ go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
 go_sdk.download(version = "1.24.6")
 
 go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
-go_deps.from_file(go_mod = "//go:go.mod")
+go_deps.module(
+    path = "google.golang.org/genproto/googleapis/api",
+    sum = "h1:hjSy6tcFQZ171igDaN5QHOw2n6vx40juYbC/x67CEhc=",
+    version = "v0.0.0-20240903143218-8af14fe29dc1",
+)
+go_deps.module(
+    path = "google.golang.org/grpc",
+    sum = "h1:aHQeeJbo8zAkAa3pRzrVjZlbz6uSfeOXlJNQM0RAbz0=",
+    version = "v1.68.0",
+)
+go_deps.module(
+    path = "google.golang.org/protobuf",
+    sum = "h1:AYd7cD/uASjIL6Q9LiTjz8JLcrh/88q5UObnmY3aOOE=",
+    version = "v1.36.10",
+)
 use_repo(
     go_deps,
     "org_golang_google_genproto_googleapis_api",
