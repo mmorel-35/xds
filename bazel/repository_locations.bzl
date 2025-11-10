@@ -1,4 +1,9 @@
 REPOSITORY_LOCATIONS = dict(
+    bazel_features = dict(
+        sha256 = "07bd2b18764cdee1e0d6ff42c9c0a6111ffcbd0c17f0de38e7f44f1519d1c0cd",
+        strip_prefix = "bazel_features-1.32.0",
+        urls = ["https://github.com/bazel-contrib/bazel_features/releases/download/v1.32.0/bazel_features-v1.32.0.tar.gz"],
+    ),
     bazel_gazelle = dict(
         sha256 = "e467b801046b6598c657309b45d2426dc03513777bd1092af2c62eebf990aca5",
         urls = [
@@ -42,6 +47,11 @@ REPOSITORY_LOCATIONS = dict(
         urls = [
             "https://github.com/bazelbuild/rules_go/releases/download/v0.53.0/rules_go-v0.53.0.zip",
         ],
+    ),
+    rules_cc = dict(
+        sha256 = "a2fdfde2ab9b2176bd6a33afca14458039023edb1dd2e73e6823810809df4027",
+        strip_prefix = "rules_cc-0.2.14",
+        urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.14.tar.gz"],
     ),
     rules_proto = dict(
         sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
