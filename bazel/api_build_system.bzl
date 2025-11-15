@@ -1,11 +1,14 @@
 """
-api_build_system provides legacy support for backward compatibility.
+DEPRECATED: This file is deprecated and maintained only for backward compatibility.
 
-This file re-exports all rules from isolated rule files to maintain backward compatibility
-with existing BUILD files. New code should prefer importing from the specific rule files:
-- //bazel:xds_proto_package.bzl for xds_proto_package and udpa_proto_package
-- //bazel:xds_cc_test.bzl for xds_cc_test and udpa_cc_test
-- //bazel:xds_go_test.bzl for xds_go_test and udpa_go_test
+New code should import rules directly from their isolated files instead:
+- Use //bazel:xds_proto_package.bzl for xds_proto_package and udpa_proto_package
+- Use //bazel:xds_cc_test.bzl for xds_cc_test and udpa_cc_test
+- Use //bazel:xds_go_test.bzl for xds_go_test and udpa_go_test
+
+This file re-exports all rules from the isolated rule files to maintain backward
+compatibility with existing BUILD files. Please migrate to the specific rule files
+for better modularity and to follow Bazel best practices.
 """
 
 load(
@@ -25,6 +28,10 @@ load(
 )
 
 # Re-export all rules for backward compatibility
+# DEPRECATED: Import these rules directly from their respective files instead:
+#   - xds_proto_package and udpa_proto_package from //bazel:xds_proto_package.bzl
+#   - xds_cc_test and udpa_cc_test from //bazel:xds_cc_test.bzl
+#   - xds_go_test and udpa_go_test from //bazel:xds_go_test.bzl
 xds_proto_package = _xds_proto_package
 xds_cc_test = _xds_cc_test
 xds_go_test = _xds_go_test
