@@ -1,4 +1,6 @@
-load("//bazel:api_build_system.bzl", "xds_cc_test", "xds_go_test")
+load("//bazel:xds_cc_test.bzl", "xds_cc_test")
+load("//bazel:xds_go_test.bzl", "xds_go_test")
+
 
 licenses(["notice"])  # Apache 2
 
