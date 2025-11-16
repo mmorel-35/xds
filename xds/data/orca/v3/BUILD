@@ -1,4 +1,4 @@
-load("//bazel:api_build_system.bzl", "xds_proto_package")
+load("//bazel:xds_proto_package.bzl", "xds_proto_package")
 
 licenses(["notice"])  # Apache 2
 
