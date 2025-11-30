@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: bazel
+    directory: /
+  - package-ecosystem: gomod
+    directory: /go
+  - package-ecosystem: pip
+    directory: /python
