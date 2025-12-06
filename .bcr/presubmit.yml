@@ -1,13 +1,13 @@
 # BCR presubmit tests for xds module
 bcr_test_module:
-  module_path: "test/build"
+  module_path: "."
   matrix:
     platform: ["debian11", "macos", "ubuntu2204", "windows"]
     bazel: [7.x, 8.x]
   tasks:
-    run_tests:
-      name: "Run test module"
+    verify_targets:
+      name: "Verify build targets"
       platform: ${{ platform }}
       bazel: ${{ bazel }}
-      test_targets:
-        - "//..."
+      build_targets:
+        - "@xds//..."

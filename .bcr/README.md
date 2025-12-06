@@ -23,7 +23,7 @@ Template for the `source.json` file that will be created in the BCR. It specifie
 - Integrity hash (automatically computed)
 
 ### presubmit.yml
-Defines the tests that BCR will run to validate the module before accepting it. The tests run on multiple platforms (Debian, macOS, Ubuntu, Windows) with different Bazel versions.
+Defines the tests that BCR will run to validate the module before accepting it. The tests run on multiple platforms (Debian, macOS, Ubuntu, Windows) with different Bazel versions. The verification builds all targets in the xds module using `@xds//...`.
 
 ## GitHub Actions Workflow
 
@@ -50,17 +50,21 @@ To enable automated BCR publishing, you need to configure a GitHub Personal Acce
 
 ### Configuring the Secret
 
-1. Go to your fork of the BCR repository (e.g., `https://github.com/bazelbuild/bazel-central-registry`)
-2. Ensure you have a fork of the BCR or create one
-3. Go to the xds repository settings: `https://github.com/cncf/xds/settings/secrets/actions`
-4. Click "New repository secret"
-5. Name: `BCR_PUBLISH_TOKEN`
-6. Value: Paste the PAT you created
-7. Click "Add secret"
+1. Go to the xds repository settings: `https://github.com/cncf/xds/settings/secrets/actions`
+2. Click "New repository secret"
+3. Name: `BCR_PUBLISH_TOKEN`
+4. Value: Paste the PAT you created
+5. Click "Add secret"
 
 ### Registry Fork
 
-The workflow is configured to use `https://github.com/bazelbuild/bazel-central-registry` as the registry fork. This is the official Bazel Central Registry where the pull request will be opened.
+The workflow is configured to use `https://github.com/bazelbuild/bazel-central-registry` as the registry. The PAT holder must have permission to fork this repository and create pull requests against it. When the workflow runs, it will:
+
+1. Fork the BCR repository (if not already forked by the PAT owner)
+2. Create a new branch with the module version
+3. Open a pull request from that fork to the main BCR repository
+
+This means the PAT must belong to a user who has permissions to fork and create PRs in the BCR.
 
 ## Manual Publishing
 
