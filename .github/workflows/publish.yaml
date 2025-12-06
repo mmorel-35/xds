@@ -19,8 +19,12 @@ jobs:
     with:
       # Use the tag from the release event or the manual input
       tag_name: ${{ github.event.release.tag_name || inputs.tag_name }}
-      # GitHub repository which is a fork of the BCR where the Pull Request will be opened
-      registry_fork: bazelbuild/bazel-central-registry
+      # IMPORTANT: This should be YOUR_GITHUB_USER/bazel-central-registry
+      # Replace with the actual fork of the BCR owned by the PAT holder
+      # Example: if adisuissa owns the PAT, use: adisuissa/bazel-central-registry
+      registry_fork: REPLACE_WITH_YOUR_FORK/bazel-central-registry
+      # The registry to open PR against (defaults to bazelbuild/bazel-central-registry)
+      registry: bazelbuild/bazel-central-registry
       # Enable attestation support for verifiable builds
       attest: true
     permissions:

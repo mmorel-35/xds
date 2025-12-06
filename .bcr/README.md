@@ -58,13 +58,21 @@ To enable automated BCR publishing, you need to configure a GitHub Personal Acce
 
 ### Registry Fork
 
-The workflow is configured to use `https://github.com/bazelbuild/bazel-central-registry` as the registry. The PAT holder must have permission to fork this repository and create pull requests against it. When the workflow runs, it will:
+The workflow requires a fork of the Bazel Central Registry. When the workflow runs, it will:
 
-1. Fork the BCR repository (if not already forked by the PAT owner)
-2. Create a new branch with the module version
-3. Open a pull request from that fork to the main BCR repository
+1. Push the new module version to your fork of the BCR (specified in `registry_fork`)
+2. Create a new branch in your fork with the module version
+3. Open a pull request from your fork to `bazelbuild/bazel-central-registry` (the main BCR)
 
-This means the PAT must belong to a user who has permissions to fork and create PRs in the BCR.
+**Important**: You must update the `registry_fork` parameter in `.github/workflows/publish.yaml`:
+- Change `REPLACE_WITH_YOUR_FORK/bazel-central-registry` to your actual fork
+- Example: `adisuissa/bazel-central-registry` if adisuissa owns the PAT
+
+To create a fork:
+1. Go to https://github.com/bazelbuild/bazel-central-registry
+2. Click "Fork" button
+3. Create the fork under your personal account or organization
+4. Update the workflow file with your fork name
 
 ## Manual Publishing
 
