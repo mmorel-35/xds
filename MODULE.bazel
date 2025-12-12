@@ -3,6 +3,9 @@ module(
     version = "0.0.0",
 )
 
+# All bazel_dep entries are organized alphabetically for improved readability.
+
+# Core dependencies from Bazel Central Registry
 bazel_dep(name = "bazel_skylib", version = "1.8.2")
 bazel_dep(name = "cel-spec", version = "0.25.1", repo_name = "dev_cel")
 bazel_dep(name = "gazelle", version = "0.47.0", repo_name = "bazel_gazelle")
@@ -16,12 +19,18 @@ bazel_dep(name = "rules_cc", version = "0.2.14")
 bazel_dep(name = "rules_go", version = "0.59.0", repo_name = "io_bazel_rules_go")
 bazel_dep(name = "rules_python", version = "1.7.0")
 
-# Configure Python toolchain for bzlmod
+# Go SDK and toolchain configuration
+go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
+go_sdk.download(version = "1.24.6")
+
+# Python toolchain configuration
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
     python_version = "3.12",
 )
 
+# Googleapis extension for language-specific rules
+# Using switched_rules from googleapis for compatibility with grpc
 switched_rules = use_extension("@com_google_googleapis//:extensions.bzl", "switched_rules")
 switched_rules.use_languages(
     cc = True,
@@ -30,9 +39,7 @@ switched_rules.use_languages(
     python = True,
 )
 
-go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
-go_sdk.download(version = "1.24.6")
-
+# Go dependencies extension
 go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
 go_deps.module(
     path = "google.golang.org/genproto/googleapis/api",
