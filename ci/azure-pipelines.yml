@@ -17,6 +17,17 @@ jobs:
       key: './WORKSPACE | ./.bazel* | **/*.bzl'
       path: $(Agent.TempDirectory)/tmp
 
+  - bash: |
+      if ! command -v buf &> /dev/null; then
+        echo "Installing buf..."
+        curl -sSL "https://github.com/bufbuild/buf/releases/download/v1.47.2/buf-$(uname -s)-$(uname -m).tar.gz" | \
+          sudo tar -xvzf - -C /usr/local --strip-components 1 buf/bin/buf
+        buf --version
+      else
+        echo "buf is already installed: $(buf --version)"
+      fi
+    displayName: 'Install buf'
+
   - bash: ci/check.sh
     env:
       TEST_TMPDIR: $(Agent.TempDirectory)/tmp
