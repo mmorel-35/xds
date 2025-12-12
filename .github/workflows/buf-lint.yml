@@ -1,0 +1,32 @@
+name: Buf Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  buf-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Buf
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          version: 'v1.47.2'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Buf lint
+        run: buf lint
+
+      - name: Buf format check
+        run: buf format --diff --exit-code
