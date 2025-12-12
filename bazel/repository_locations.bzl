@@ -59,7 +59,7 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/bazelbuild/rules_python/archive/1.6.3.tar.gz"],
     ),
     rules_buf = dict(
-        sha256 = "f7c17e85dd0f8c2e1e3c2e3b69e2b74c0086ceb2f5d703fcf1e7fc1e23d51fcc",
+        sha256 = "89c6d6e6523802ee7f1210340a69fab4ee0b47554953a1ecbe359319fd3f93dc",
         strip_prefix = "rules_buf-0.3.0",
         urls = ["https://github.com/bufbuild/rules_buf/archive/refs/tags/v0.3.0.tar.gz"],
     ),

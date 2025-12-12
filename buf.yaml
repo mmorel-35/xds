@@ -1,6 +1,11 @@
 version: v2
 modules:
   - path: .
+    excludes:
+      - bazel-bin
+      - bazel-out
+      - bazel-testlogs
+      - bazel-xds
 deps:
   - buf.build/envoyproxy/protoc-gen-validate
   - buf.build/googleapis/googleapis
