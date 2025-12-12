@@ -4,6 +4,7 @@ load("@com_github_grpc_grpc//bazel:python_rules.bzl", _py_proto_library = "py_pr
 load("@com_google_protobuf//bazel:proto_library.bzl", "proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
 load("@io_bazel_rules_go//proto:def.bzl", "go_grpc_library", "go_proto_library")
+load("@rules_buf//buf:defs.bzl", "buf_lint_test")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
 load(
     "//bazel:external_proto_deps.bzl",
@@ -134,6 +135,13 @@ def xds_proto_package(
             "@org_golang_google_protobuf//types/known/timestamppb:go_default_library",
             "@org_golang_google_protobuf//types/known/wrapperspb:go_default_library",
         ]).to_list(),
+    )
+
+    # Add buf linting test for proto files
+    buf_lint_test(
+        name = name + "_buf_lint_test",
+        config = "//:buf.yaml",
+        targets = [":" + name],
     )
 
 def xds_cc_test(name, **kwargs):
