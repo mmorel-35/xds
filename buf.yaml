@@ -14,15 +14,15 @@ lint:
   use:
     - STANDARD
   except:
-    - PACKAGE_VERSION_SUFFIX
-    - FIELD_LOWER_SNAKE_CASE
-    - ENUM_VALUE_UPPER_SNAKE_CASE
-    - ENUM_VALUE_PREFIX
-    - ENUM_ZERO_VALUE_SUFFIX
-    - SERVICE_SUFFIX
-    - RPC_REQUEST_RESPONSE_UNIQUE
-    - RPC_REQUEST_STANDARD_NAME
-    - RPC_RESPONSE_STANDARD_NAME
+    - PACKAGE_VERSION_SUFFIX  # Allow packages without version suffixes
+    - FIELD_LOWER_SNAKE_CASE  # Allow non-snake_case field names
+    - ENUM_VALUE_UPPER_SNAKE_CASE  # Allow non-UPPER_SNAKE_CASE enum values
+    - ENUM_VALUE_PREFIX  # Allow enum values without package prefixes
+    - ENUM_ZERO_VALUE_SUFFIX  # Allow enum zero values without _UNSPECIFIED suffix
+    - SERVICE_SUFFIX  # Allow services without standard suffix
+    - RPC_REQUEST_RESPONSE_UNIQUE  # Allow RPC request/response types to be reused
+    - RPC_REQUEST_STANDARD_NAME  # Allow non-standard RPC request naming (e.g., OrcaLoadReportRequest)
+    - RPC_RESPONSE_STANDARD_NAME  # Allow non-standard RPC response naming (e.g., OrcaLoadReport)
 breaking:
   use:
     - FILE
