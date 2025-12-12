@@ -1,8 +1,13 @@
 REPOSITORY_LOCATIONS = dict(
+    bazel_features = dict(
+        sha256 = "c41853e3b636c533b86bf5ab4658064e6cc9db0a3bce52cbff0629e094344ca9",
+        strip_prefix = "bazel_features-1.33.0",
+        urls = ["https://github.com/bazel-contrib/bazel_features/releases/download/v1.33.0/bazel_features-v1.33.0.tar.gz"],
+    ),
     bazel_gazelle = dict(
-        sha256 = "e467b801046b6598c657309b45d2426dc03513777bd1092af2c62eebf990aca5",
+        sha256 = "675114d8b433d0a9f54d81171833be96ebc4113115664b791e6f204d58e93446",
         urls = [
-            "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.45.0/bazel-gazelle-v0.45.0.tar.gz",
+            "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.47.0/bazel-gazelle-v0.47.0.tar.gz",
         ],
     ),
     bazel_skylib = dict(
@@ -10,43 +15,43 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/bazelbuild/bazel-skylib/releases/download/1.8.2/bazel-skylib-1.8.2.tar.gz"],
     ),
     com_envoyproxy_protoc_gen_validate = dict(
-        sha256 = "e4718352754df1393b8792b631338aa8562f390e8160783e365454bc11d96328",
-        strip_prefix = "protoc-gen-validate-1.2.1",
-        urls = ["https://github.com/envoyproxy/protoc-gen-validate/archive/refs/tags/v1.2.1.tar.gz"],
+        sha256 = "26dc6db523ee943af51fdfc292658a2dbe7046735654f1dc839745988f0fe26b",
+        strip_prefix = "protoc-gen-validate-1.3.0",
+        urls = ["https://github.com/bufbuild/protoc-gen-validate/archive/refs/tags/v1.3.0.tar.gz"],
     ),
     com_github_grpc_grpc = dict(
-        sha256 = "86f0f28b75b1562c82b7fc5d436b4f5f5da6cb8d67f59e9fec5f8aa1fe924037",
-        strip_prefix = "grpc-1.68.0",
-        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.68.0.tar.gz"],
+        sha256 = "0af37b800953130b47c075b56683ee60bdc3eda3c37fc6004193f5b569758204",
+        strip_prefix = "grpc-1.76.0",
+        urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.76.0.tar.gz"],
     ),
     com_google_googleapis = dict(
         # TODO(dio): Consider writing a Starlark macro for importing Google API proto.
-        sha256 = "9d1a930e767c93c825398b8f8692eca3fe353b9aaadedfbcf1fca2282c85df88",
-        strip_prefix = "googleapis-64926d52febbf298cb82a8f472ade4a3969ba922",
+        sha256 = "a7fcd63679a62be91e3467596d036bf61e3e6337fd036a5886fe10edadcb8383",
+        strip_prefix = "googleapis-8cd3749f4b98f2eeeef511c16431979aeb3a6502",
         urls = [
-            "https://github.com/googleapis/googleapis/archive/64926d52febbf298cb82a8f472ade4a3969ba922.zip",
+            "https://github.com/googleapis/googleapis/archive/8cd3749f4b98f2eeeef511c16431979aeb3a6502.zip",
         ],
     ),
     com_google_protobuf = dict(
-        sha256 = "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e",
-        strip_prefix = "protobuf-29.3",
-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.3.tar.gz"],
+        sha256 = "0c98bb704ceb4e68c92f93907951ca3c36130bc73f87264e8c0771a80362ac97",
+        strip_prefix = "protobuf-33.1",
+        urls = ["https://github.com/protocolbuffers/protobuf/archive/v33.1.tar.gz"],
     ),
     dev_cel = dict(
-        sha256 = "5cba6b0029e727d1f4d8fd134de4e747cecc0bc293d026017d7edc48058d09f7",
-        strip_prefix = "cel-spec-0.24.0",
-        urls = ["https://github.com/google/cel-spec/archive/refs/tags/v0.24.0.tar.gz"],
+        sha256 = "13583c5a312861648449845b709722676a3c9b43396b6b8e9cbe4538feb74ad2",
+        strip_prefix = "cel-spec-0.25.1",
+        urls = ["https://github.com/google/cel-spec/archive/refs/tags/v0.25.1.tar.gz"],
     ),
     io_bazel_rules_go = dict(
-        sha256 = "b78f77458e77162f45b4564d6b20b6f92f56431ed59eaaab09e7819d1d850313",
+        sha256 = "68af54cb97fbdee5e5e8fe8d210d15a518f9d62abfd71620c3eaff3b26a5ff86",
         urls = [
-            "https://github.com/bazelbuild/rules_go/releases/download/v0.53.0/rules_go-v0.53.0.zip",
+            "https://github.com/bazelbuild/rules_go/releases/download/v0.59.0/rules_go-v0.59.0.zip",
         ],
     ),
     rules_cc = dict(
-        sha256 = "abc605dd850f813bb37004b77db20106a19311a96b2da1c92b789da529d28fe1",
-        strip_prefix = "rules_cc-0.0.17",
-        urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.17.tar.gz"],
+        sha256 = "a2fdfde2ab9b2176bd6a33afca14458039023edb1dd2e73e6823810809df4027",
+        strip_prefix = "rules_cc-0.2.14",
+        urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.14.tar.gz"],
     ),
     rules_proto = dict(
         sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
@@ -54,8 +59,8 @@ REPOSITORY_LOCATIONS = dict(
         urls = ["https://github.com/bazelbuild/rules_proto/archive/refs/tags/7.1.0.tar.gz"],
     ),
     rules_python = dict(
-        sha256 = "2f5c284fbb4e86045c2632d3573fc006facbca5d1fa02976e89dc0cd5488b590",
-        strip_prefix = "rules_python-1.6.3",
-        urls = ["https://github.com/bazelbuild/rules_python/archive/1.6.3.tar.gz"],
+        sha256 = "f609f341d6e9090b981b3f45324d05a819fd7a5a56434f849c761971ce2c47da",
+        strip_prefix = "rules_python-1.7.0",
+        urls = ["https://github.com/bazelbuild/rules_python/archive/1.7.0.tar.gz"],
     ),
 )
