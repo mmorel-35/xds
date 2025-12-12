@@ -1,4 +1,4 @@
-load("@rules_buf//buf:defs.bzl", "buf_lint_test")
+load("@rules_buf//buf:defs.bzl", "buf_format", "buf_lint_test")
 
 # Buf configuration files
 exports_files([
@@ -22,4 +22,10 @@ buf_lint_test(
         "//xds/type/v3:pkg",
         "//xds/type/matcher/v3:pkg",
     ],
+)
+
+# Buf format rule - run with: bazel run //:buf_format
+# This formats all proto files in the workspace
+buf_format(
+    name = "buf_format",
 )
