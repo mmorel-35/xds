@@ -140,6 +140,7 @@ def xds_proto_package(
     # Add buf linting test for proto files
     buf_lint_test(
         name = name + "_buf_lint_test",
+        config = "//:buf.yaml",
         targets = [":" + name],
     )
 
