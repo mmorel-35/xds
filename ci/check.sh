@@ -2,6 +2,7 @@
 
 set -e
 
+# Run all tests including buf_lint_test via Bazel
 bazel test --config=ci //...
 
 rm -rf go/xds go/udpa
