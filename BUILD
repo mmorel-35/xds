@@ -1,5 +1,11 @@
 load("@rules_buf//buf:defs.bzl", "buf_lint_test")
 
+# Buf configuration files
+exports_files([
+    "buf.yaml",
+    "buf.lock",
+])
+
 # Buf lint test for the entire repository
 buf_lint_test(
     name = "buf_lint_test",
