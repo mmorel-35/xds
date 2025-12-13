@@ -38,8 +38,9 @@ buf_format(
 #       breaking_against = "//path/to:baseline_image.binpb",
 #   )
 #
-# To create a baseline image file, use:
-#   bazel build //your/package:pkg
-#   bazel run @rules_buf//tools:buf -- build -o baseline_image.binpb
+# To create a baseline image file from your proto definitions:
+#   1. Checkout the baseline version (e.g., main branch or a release tag)
+#   2. Run: bazel run @rules_buf//buf -- build -o baseline_image.binpb
+#   3. Commit the baseline_image.binpb file to your package directory
 #
 # For more information, see: https://buf.build/docs/build-systems/bazel/#buf-breaking-test

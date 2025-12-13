@@ -104,7 +104,7 @@ def xds_proto_package(
         visibility = ["//visibility:public"],
         breaking_against = None):
     """Builds proto targets and creates tests for linting and breaking changes.
-    
+
     Args:
         name: Name of the proto package (default: "pkg")
         srcs: List of proto source files
