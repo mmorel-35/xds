@@ -4,7 +4,7 @@ load("@com_github_grpc_grpc//bazel:python_rules.bzl", _py_proto_library = "py_pr
 load("@com_google_protobuf//bazel:proto_library.bzl", "proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
 load("@io_bazel_rules_go//proto:def.bzl", "go_grpc_library", "go_proto_library")
-load("@rules_buf//buf:defs.bzl", "buf_lint_test")
+load("@rules_buf//buf:defs.bzl", "buf_breaking_test", "buf_lint_test")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
 load(
     "//bazel:external_proto_deps.bzl",
@@ -101,7 +101,19 @@ def xds_proto_package(
         srcs = [],
         deps = [],
         has_services = False,
-        visibility = ["//visibility:public"]):
+        visibility = ["//visibility:public"],
+        breaking_against = None):
+    """Builds proto targets and creates tests for linting and breaking changes.
+    
+    Args:
+        name: Name of the proto package (default: "pkg")
+        srcs: List of proto source files
+        deps: Dependencies on other proto_library targets
+        has_services: Whether this package contains gRPC services
+        visibility: Target visibility
+        breaking_against: Optional label pointing to a baseline image file for breaking change detection.
+                         If provided, a buf_breaking_test will be created.
+    """
     if srcs == []:
         srcs = native.glob(["*.proto"])
 
@@ -144,6 +156,15 @@ def xds_proto_package(
         targets = [":" + name],
     )
 
+    # Add buf breaking change test if baseline image is provided
+    if breaking_against:
+        buf_breaking_test(
+            name = name + "_buf_breaking_test",
+            config = "//:buf.yaml",
+            targets = [":" + name],
+            against = breaking_against,
+        )
+
 def xds_cc_test(name, **kwargs):
     cc_test(
         name = name,
@@ -158,8 +179,8 @@ def xds_go_test(name, **kwargs):
 
 # Old names for backward compatibility.
 # TODO(roth): Remove these once all callers are migrated to the new names.
-def udpa_proto_package(srcs = [], deps = [], has_services = False, visibility = ["//visibility:public"]):
-    xds_proto_package(srcs = srcs, deps = deps, has_services = has_services, visibility = visibility)
+def udpa_proto_package(srcs = [], deps = [], has_services = False, visibility = ["//visibility:public"], breaking_against = None):
+    xds_proto_package(srcs = srcs, deps = deps, has_services = has_services, visibility = visibility, breaking_against = breaking_against)
 
 def udpa_cc_test(name, **kwargs):
     xds_cc_test(name, **kwargs)

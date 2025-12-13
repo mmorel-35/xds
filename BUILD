@@ -1,4 +1,4 @@
-load("@rules_buf//buf:defs.bzl", "buf_format", "buf_lint_test")
+load("@rules_buf//buf:defs.bzl", "buf_breaking_test", "buf_format", "buf_lint_test")
 
 # Buf configuration files
 exports_files([
@@ -29,3 +29,17 @@ buf_lint_test(
 buf_format(
     name = "buf_format",
 )
+
+# Buf breaking change detection
+# To enable buf_breaking_test for a proto package, add the breaking_against parameter
+# to xds_proto_package() or udpa_proto_package() in your BUILD file.
+# Example:
+#   xds_proto_package(
+#       breaking_against = "//path/to:baseline_image.binpb",
+#   )
+#
+# To create a baseline image file, use:
+#   bazel build //your/package:pkg
+#   bazel run @rules_buf//tools:buf -- build -o baseline_image.binpb
+#
+# For more information, see: https://buf.build/docs/build-systems/bazel/#buf-breaking-test
