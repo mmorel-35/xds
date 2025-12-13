@@ -45,7 +45,9 @@ xds_proto_package(
 
 To create a baseline image file from your current proto definitions:
 
-1. Build your proto package: `bazel build //your/package:pkg`
-2. Use buf to generate the image (requires buf CLI or via Bazel)
+1. Checkout the baseline version (e.g., main branch or a release tag)
+2. Generate the image file: `bazel run @rules_buf//buf -- build -o baseline_image.binpb`
+3. Commit the `baseline_image.binpb` file to your package directory
+4. Update your BUILD file to reference it: `breaking_against = ":baseline_image.binpb"`
 
 For more information, see the [Buf documentation](https://buf.build/docs/build-systems/bazel/).
