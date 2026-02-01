@@ -50,16 +50,9 @@ jobs:
         with:
           packages-dir: python/dist/
 
-      - name: Create GitHub Release
+      - name: Upload Python artifacts to release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: Python Release ${{ steps.get_version.outputs.version }}
-          body: |
-            Python package release version ${{ steps.get_version.outputs.version }}
-            
-            ## Installation
-            ```bash
-            pip install xds==${{ steps.get_version.outputs.version }}
-            ```
           files: python/dist/*
+

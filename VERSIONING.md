@@ -51,22 +51,25 @@ This will:
 
 When a `v*` tag is pushed, all release workflows are triggered simultaneously:
 
+#### Release Creation
+1. A unified GitHub release is created with release notes
+2. Release includes installation instructions for all ecosystems
+
 #### Python
 1. Builds the Python package
 2. Publishes to PyPI
-3. Creates a GitHub release with artifacts
+3. Uploads Python distribution artifacts to the release
 
 #### Go
 1. Verifies the Go module
 2. Runs tests
-3. Creates a GitHub release
 
 #### Bazel
 1. Automatically publishes to Bazel Central Registry using the `publish-to-bcr` reusable workflow
 2. Generates BCR entry files (MODULE.bazel, source.json, presubmit.yml, metadata.json)
 3. Creates attestations for security verification
 4. Opens a pull request to bazelbuild/bazel-central-registry
-5. Creates a GitHub release
+
 
 ### Creating a Release Manually
 
