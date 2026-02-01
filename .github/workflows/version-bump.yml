@@ -1,0 +1,67 @@
+name: Version Bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      ecosystem:
+        description: 'Ecosystem to version'
+        required: true
+        type: choice
+        options:
+          - python
+          - go
+      version:
+        description: 'New version (e.g., 1.2.3)'
+        required: true
+        type: string
+      create_tag:
+        description: 'Create and push tag'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  bump-version:
+    name: Bump Version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update Python version
+        if: inputs.ecosystem == 'python'
+        run: |
+          cd python
+          sed -i "s/version = \".*\"/version = \"${{ inputs.version }}\"/" pyproject.toml
+          cat pyproject.toml
+
+      - name: Update Go version (create VERSION file)
+        if: inputs.ecosystem == 'go'
+        run: |
+          cd go
+          echo "${{ inputs.version }}" > VERSION
+          cat VERSION
+
+      - name: Commit version changes
+        run: |
+          git add .
+          git commit -m "chore(${{ inputs.ecosystem }}): bump version to ${{ inputs.version }}"
+          git push
+
+      - name: Create and push tag
+        if: inputs.create_tag
+        run: |
+          TAG_NAME="${{ inputs.ecosystem }}/v${{ inputs.version }}"
+          git tag -a "$TAG_NAME" -m "Release ${{ inputs.ecosystem }} version ${{ inputs.version }}"
+          git push origin "$TAG_NAME"
+          echo "Created and pushed tag: $TAG_NAME"
