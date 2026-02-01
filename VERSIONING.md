@@ -131,7 +131,7 @@ The Python release workflow uses OIDC trusted publishing. To configure:
 1. Go to PyPI → Account Settings → Publishing
 2. Add a new publisher:
    - PyPI Project Name: `xds`
-   - Owner: `mmorel-35` (or organization)
+   - Owner: `<your-github-username>` (or organization name)
    - Repository: `xds`
    - Workflow: `python-release.yml`
    - Environment: (leave empty)
