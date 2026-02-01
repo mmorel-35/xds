@@ -9,6 +9,8 @@ jobs:
   release:
     name: Verify and Test Go Module
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
