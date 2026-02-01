@@ -10,6 +10,7 @@ on:
         options:
           - python
           - go
+          - bazel
       version:
         description: 'New version (e.g., 1.2.3)'
         required: true
@@ -51,6 +52,12 @@ jobs:
           cd go
           echo "${{ inputs.version }}" > VERSION
           cat VERSION
+
+      - name: Update Bazel version
+        if: inputs.ecosystem == 'bazel'
+        run: |
+          sed -i "s/version = \".*\"/version = \"${{ inputs.version }}\"/" MODULE.bazel
+          cat MODULE.bazel
 
       - name: Commit version changes
         run: |

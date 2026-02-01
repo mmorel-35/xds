@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial versioning workflows for Python and Go ecosystems
+- Initial versioning workflows for Python, Go, and Bazel ecosystems
 - Automated release processes via GitHub Actions
 - Release drafter for automated release notes
 - Changelog automation
+- Bazel Central Registry (BCR) submission support
 
 ## [0.1.0] - Python - Initial Release
 

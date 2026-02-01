@@ -8,6 +8,7 @@ The xDS project maintains separate versioning for different language ecosystems:
 
 - **Python**: Published to PyPI as the `xds` package
 - **Go**: Published as Go modules at `github.com/cncf/xds/go`
+- **Bazel**: Published to Bazel Central Registry (BCR) as `xds` module
 
 ## Version Format
 
@@ -23,6 +24,7 @@ Tags are namespaced by ecosystem:
 
 - Python releases: `python/v1.2.3`
 - Go releases: `go/v1.2.3`
+- Bazel releases: `bazel/v1.2.3` or `v1.2.3` (for BCR compatibility)
 
 ## Release Process
 
@@ -32,7 +34,7 @@ Use the Version Bump workflow to update version numbers:
 
 1. Go to **Actions** → **Version Bump**
 2. Click **Run workflow**
-3. Select the ecosystem (python or go)
+3. Select the ecosystem (python, go, or bazel)
 4. Enter the new version (e.g., `1.2.3`)
 5. Choose whether to create a tag immediately
 6. Click **Run workflow**
@@ -55,6 +57,13 @@ When a version tag is pushed, the appropriate release workflow automatically:
 1. Verifies the Go module
 2. Runs tests
 3. Creates a GitHub release
+
+#### Bazel (`bazel/v*` or `v*` tags)
+1. Builds and tests with Bazel
+2. Generates language files from protos
+3. Creates BCR submission files (MODULE.bazel, source.json, presubmit.yml)
+4. Creates a source archive with integrity hash
+5. Creates a GitHub release with BCR submission files
 
 ### Creating a Release Manually
 
@@ -90,6 +99,29 @@ git tag go/vX.Y.Z
 git push origin go/vX.Y.Z
 ```
 
+#### Bazel Release
+
+```bash
+# Update version in MODULE.bazel
+sed -i 's/version = ".*"/version = "X.Y.Z"/' MODULE.bazel
+
+# Commit changes
+git add MODULE.bazel
+git commit -m "chore(bazel): bump version to X.Y.Z"
+git push
+
+# Create and push tag (can use either format)
+git tag bazel/vX.Y.Z  # or just vX.Y.Z for BCR
+git push origin bazel/vX.Y.Z
+
+# After release is created, submit to BCR:
+# 1. Download BCR submission files from GitHub release
+# 2. Fork https://github.com/bazelbuild/bazel-central-registry
+# 3. Create modules/xds/X.Y.Z/ directory
+# 4. Copy MODULE.bazel, source.json, and presubmit.yml
+# 5. Submit pull request to BCR
+```
+
 ## Publishing Credentials
 
 ### Python (PyPI)
@@ -109,6 +141,23 @@ No API tokens are needed with OIDC.
 ### Go Modules
 
 Go modules are automatically published when tags are pushed. No additional setup required.
+
+### Bazel (BCR)
+
+Bazel modules require manual submission to the Bazel Central Registry after creating a release:
+
+1. Create a release tag (triggers automatic BCR file generation)
+2. Download the BCR submission files from the GitHub release
+3. Fork [bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry)
+4. Create a new directory: `modules/xds/<version>/`
+5. Copy the following files from the release to this directory:
+   - `MODULE.bazel`
+   - `source.json`
+   - `presubmit.yml`
+6. Submit a pull request to the BCR repository
+7. Wait for BCR maintainers to review and merge
+
+See [BCR documentation](https://github.com/bazelbuild/bazel-central-registry/blob/main/docs/README.md) for more details.
 
 ## Changelog
 
@@ -144,5 +193,7 @@ The Release Drafter workflow automatically creates draft releases based on merge
 2. **Update documentation**: Ensure README and docs reflect changes
 3. **Write clear release notes**: Describe what changed and why
 4. **Follow semantic versioning**: Be consistent with version number meanings
-5. **Coordinate releases**: If both Python and Go packages change together, coordinate their releases
+5. **Coordinate releases**: If Python, Go, and Bazel packages change together, coordinate their releases
 6. **Review draft releases**: Use the automated draft releases as a starting point
+7. **Test Bazel builds**: Before releasing to BCR, ensure `bazel build //...` and `bazel test //...` pass
+8. **BCR submission**: For Bazel releases, don't forget to submit to BCR after creating the GitHub release

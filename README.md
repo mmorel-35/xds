@@ -43,6 +43,10 @@ This repository provides xDS protocol buffer bindings for multiple languages:
 
 - **Python**: Available on [PyPI](https://pypi.org/project/xds/) - `pip install xds`
 - **Go**: Available as a Go module - `go get github.com/cncf/xds/go`
+- **Bazel**: Available on [Bazel Central Registry](https://registry.bazel.build/) - Add to `MODULE.bazel`:
+  ```starlark
+  bazel_dep(name = "xds", version = "X.Y.Z")
+  ```
 
 For versioning and release information, see [VERSIONING.md](VERSIONING.md).
 
