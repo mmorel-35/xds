@@ -1,3 +1,4 @@
 bazel-*
+!.github/workflows/bazel-*.yml
 MODULE.bazel.lock
 __pycache__/

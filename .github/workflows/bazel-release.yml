@@ -1,0 +1,154 @@
+name: Bazel Module Release
+
+on:
+  push:
+    tags:
+      - 'bazel/v*'
+      - 'v*'  # Support both bazel/v* and v* for BCR compatibility
+
+jobs:
+  release:
+    name: Create Bazel Module Release for BCR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mount bazel cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bazel
+          key: bazel-${{ runner.os }}-${{ hashFiles('.bazelversion', '.bazelrc', 'WORKSPACE', 'WORKSPACE.bzlmod', 'MODULE.bazel') }}
+
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/bazel/v* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/bazel/v}
+          else
+            VERSION=${GITHUB_REF#refs/tags/v}
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+
+      - name: Update version in MODULE.bazel
+        run: |
+          sed -i "s/version = \".*\"/version = \"${{ steps.get_version.outputs.version }}\"/" MODULE.bazel
+          cat MODULE.bazel
+
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.9.0
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
+
+      - name: Build and test with Bazel
+        run: |
+          bazel build //...
+          bazel test //...
+
+      - name: Generate language files from protos
+        run: |
+          tools/generate_lang_files_from_protos.py
+
+      - name: Create BCR submission files
+        run: |
+          mkdir -p bcr-submission
+          
+          # Copy MODULE.bazel
+          cp MODULE.bazel bcr-submission/
+          
+          # Create source.json for BCR
+          cat > bcr-submission/source.json << EOF
+          {
+            "integrity": "sha256-PLACEHOLDER",
+            "strip_prefix": "xds-${{ steps.get_version.outputs.version }}",
+            "url": "https://github.com/${{ github.repository }}/archive/refs/tags/${{ github.ref_name }}.tar.gz"
+          }
+          EOF
+          
+          # Create presubmit.yml for BCR
+          cat > bcr-submission/presubmit.yml << EOF
+          matrix:
+            platform:
+              - ubuntu2004
+              - macos
+              - windows
+          tasks:
+            verify_targets:
+              name: Verify build targets
+              platform: \${{ platform }}
+              bazel: 7.x
+              build_targets:
+                - //...
+            run_tests:
+              name: Run tests
+              platform: \${{ platform }}
+              bazel: 7.x
+              test_targets:
+                - //...
+          EOF
+          
+          echo "BCR submission files created in bcr-submission/"
+          ls -la bcr-submission/
+
+      - name: Create archive for BCR
+        run: |
+          # Create a source archive (excluding .git)
+          tar -czf xds-${{ steps.get_version.outputs.version }}.tar.gz \
+            --exclude='.git' \
+            --exclude='bcr-submission' \
+            --transform="s,^,xds-${{ steps.get_version.outputs.version }}/," \
+            .
+          
+          # Calculate SHA256
+          SHA256=$(sha256sum xds-${{ steps.get_version.outputs.version }}.tar.gz | cut -d' ' -f1)
+          echo "Archive SHA256: $SHA256"
+          
+          # Update source.json with actual integrity
+          sed -i "s/PLACEHOLDER/$SHA256/" bcr-submission/source.json
+          cat bcr-submission/source.json
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Bazel Module Release ${{ steps.get_version.outputs.version }}
+          body: |
+            Bazel module release version ${{ steps.get_version.outputs.version }}
+            
+            ## Bazel Central Registry (BCR)
+            
+            This release can be submitted to the [Bazel Central Registry](https://registry.bazel.build/).
+            
+            ### To use this module in your Bazel project:
+            
+            Add to your `MODULE.bazel`:
+            ```starlark
+            bazel_dep(name = "xds", version = "${{ steps.get_version.outputs.version }}")
+            ```
+            
+            ### BCR Submission
+            
+            To submit this version to BCR:
+            
+            1. Download the BCR submission files from this release
+            2. Fork https://github.com/bazelbuild/bazel-central-registry
+            3. Create a new directory `modules/xds/${{ steps.get_version.outputs.version }}/`
+            4. Copy `MODULE.bazel`, `source.json`, and `presubmit.yml` to that directory
+            5. Create a pull request
+            
+            See the [BCR documentation](https://github.com/bazelbuild/bazel-central-registry/blob/main/docs/README.md) for more details.
+          files: |
+            bcr-submission/*
+            xds-${{ steps.get_version.outputs.version }}.tar.gz
+          generate_release_notes: true
+
+      - name: Post BCR submission instructions
+        run: |
+          echo "::notice title=BCR Submission::To publish to Bazel Central Registry, follow the instructions in the release notes"
+          echo "::notice title=Next Steps::1. Download BCR files from release 2. Submit PR to bazelbuild/bazel-central-registry"
