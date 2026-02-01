@@ -108,7 +108,7 @@ The Python release workflow uses OIDC trusted publishing. To configure:
 1. Go to PyPI → Account Settings → Publishing
 2. Add a new publisher:
    - PyPI Project Name: `xds`
-   - Owner: `<your-github-username>` (or organization name)
+   - Owner: `cncf` (or your organization name)
    - Repository: `xds`
    - Workflow: `python-release.yml`
    - Environment: (leave empty)
@@ -125,12 +125,12 @@ Bazel modules are automatically published to the Bazel Central Registry using th
 
 #### Setup (One-time)
 
-1. **Fork the BCR**: Fork [bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry) to your GitHub account or organization
+1. **Fork the BCR**: Fork [bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry) to the CNCF organization or appropriate account
 2. **Create a Personal Access Token (PAT)**:
    - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
    - Create a new token with `repo` and `workflow` scopes
    - Save it as a repository secret named `BCR_PUBLISH_TOKEN`
-3. **Update the workflow**: Set `registry_fork` in `.github/workflows/publish-to-bcr.yml` to your fork (e.g., `your-username/bazel-central-registry`)
+3. **Update the workflow**: Set `registry_fork` in `.github/workflows/publish-to-bcr.yml` to the CNCF fork (currently set to `cncf/bazel-central-registry`)
 
 #### How It Works
 

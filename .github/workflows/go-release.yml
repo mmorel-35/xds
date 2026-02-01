@@ -7,10 +7,8 @@ on:
 
 jobs:
   release:
-    name: Create Go Module Release
+    name: Verify and Test Go Module
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout code
@@ -20,13 +18,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.24'
-
-      - name: Extract version from tag
-        id: get_version
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Version: $VERSION"
 
       - name: Verify Go module
         run: |

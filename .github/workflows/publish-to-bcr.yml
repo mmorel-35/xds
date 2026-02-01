@@ -15,8 +15,8 @@ jobs:
     uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v1
     with:
       tag_name: ${{ github.ref_name }}
-      # TODO: Update this to your fork of bazel-central-registry
-      registry_fork: mmorel-35/bazel-central-registry
+      # Fork bazelbuild/bazel-central-registry and update this to your fork
+      registry_fork: cncf/bazel-central-registry
       draft: false
     secrets:
       publish_token: ${{ secrets.BCR_PUBLISH_TOKEN }}

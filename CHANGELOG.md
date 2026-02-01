@@ -25,5 +25,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Python package with xDS Protocol Buffer Messages
 - Support for protobuf 5.29.1
 
-[Unreleased]: https://github.com/mmorel-35/xds/compare/python/v0.1.0...HEAD
-[0.1.0]: https://github.com/mmorel-35/xds/releases/tag/python/v0.1.0
+[Unreleased]: https://github.com/cncf/xds/compare/python/v0.1.0...HEAD
+[0.1.0]: https://github.com/cncf/xds/releases/tag/python/v0.1.0

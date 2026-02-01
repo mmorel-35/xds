@@ -16,27 +16,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Extract version from tag
-        id: get_version
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Version: $VERSION"
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: Release ${{ steps.get_version.outputs.version }}
+          name: Release ${{ github.ref_name }}
           draft: false
           body: |
-            # xDS Release ${{ steps.get_version.outputs.version }}
+            # xDS Release ${{ github.ref_name }}
             
             This release includes updates for all language bindings:
             
             ## Python (PyPI)
             ```bash
-            pip install xds==${{ steps.get_version.outputs.version }}
+            pip install xds==${{ github.ref_name }}
             ```
             
             ## Go Module
@@ -46,8 +39,9 @@ jobs:
             
             ## Bazel (BCR)
             ```starlark
-            bazel_dep(name = "xds", version = "${{ steps.get_version.outputs.version }}")
+            bazel_dep(name = "xds", version = "${{ github.ref_name }}")
             ```
             
             See the [CHANGELOG](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
           generate_release_notes: true
+
