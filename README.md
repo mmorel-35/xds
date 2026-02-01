@@ -39,7 +39,7 @@ time as we generalize parts of the API to be less client-specific.
 
 ## Language Bindings
 
-This repository provides xDS protocol buffer bindings for multiple languages:
+This repository provides xDS protocol buffer bindings for multiple languages with unified versioning:
 
 - **Python**: Available on [PyPI](https://pypi.org/project/xds/) - `pip install xds`
 - **Go**: Available as a Go module - `go get github.com/cncf/xds/go`
@@ -47,6 +47,8 @@ This repository provides xDS protocol buffer bindings for multiple languages:
   ```starlark
   bazel_dep(name = "xds", version = "X.Y.Z")
   ```
+
+All language bindings share the same version number and are released together.
 
 For versioning and release information, see [VERSIONING.md](VERSIONING.md).
 

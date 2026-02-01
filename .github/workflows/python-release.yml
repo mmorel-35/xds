@@ -3,7 +3,7 @@ name: Python Package Release
 on:
   push:
     tags:
-      - 'python/v*'
+      - 'v*'
 
 jobs:
   release:
@@ -30,7 +30,7 @@ jobs:
       - name: Extract version from tag
         id: get_version
         run: |
-          VERSION=${GITHUB_REF#refs/tags/python/v}
+          VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
 

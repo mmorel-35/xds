@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial versioning workflows for Python, Go, and Bazel ecosystems
+- Unified versioning workflows for Python, Go, and Bazel ecosystems
 - Automated release processes via GitHub Actions
 - Release drafter for automated release notes
 - Changelog automation
 - Bazel Central Registry (BCR) automated publishing using publish-to-bcr
 - BCR template files (.bcr/metadata.template.json, source.template.json, presubmit.yml)
+
+### Changed
+- All ecosystems now use the same version number (unified versioning)
+- Single `v*` tag triggers releases for Python, Go, and Bazel simultaneously
 
 ## [0.1.0] - Python - Initial Release
 

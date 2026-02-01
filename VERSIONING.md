@@ -4,11 +4,13 @@ This document describes the versioning and release process for the xDS project.
 
 ## Overview
 
-The xDS project maintains separate versioning for different language ecosystems:
+The xDS project uses a unified version across all language ecosystems:
 
 - **Python**: Published to PyPI as the `xds` package
 - **Go**: Published as Go modules at `github.com/cncf/xds/go`
 - **Bazel**: Published to Bazel Central Registry (BCR) as `xds` module
+
+All ecosystems share the same version number and are released together.
 
 ## Version Format
 
@@ -20,45 +22,46 @@ All versions follow [Semantic Versioning 2.0.0](https://semver.org/):
 
 ## Tag Format
 
-Tags are namespaced by ecosystem:
+A single tag format is used for all ecosystems:
 
-- Python releases: `python/v1.2.3`
-- Go releases: `go/v1.2.3`
-- Bazel releases: `v1.2.3` (standard format for BCR compatibility)
+- Releases: `v1.2.3`
+
+Pushing a `v*` tag triggers releases for Python (PyPI), Go (GitHub release), and Bazel (BCR) simultaneously.
 
 ## Release Process
 
 ### Manual Version Bump
 
-Use the Version Bump workflow to update version numbers:
+Use the Version Bump workflow to update version numbers across all ecosystems:
 
 1. Go to **Actions** → **Version Bump**
 2. Click **Run workflow**
-3. Select the ecosystem (python, go, or bazel)
-4. Enter the new version (e.g., `1.2.3`)
-5. Choose whether to create a tag immediately
-6. Click **Run workflow**
+3. Enter the new version (e.g., `1.2.3`)
+4. Choose whether to create a tag immediately
+5. Click **Run workflow**
 
 This will:
-- Update the version in the appropriate file
+- Update the version in Python's `pyproject.toml`
+- Update the version in Go's `VERSION` file
+- Update the version in Bazel's `MODULE.bazel`
 - Commit the changes
 - Optionally create and push a version tag
 
 ### Automated Release
 
-When a version tag is pushed, the appropriate release workflow automatically:
+When a `v*` tag is pushed, all release workflows are triggered simultaneously:
 
-#### Python (`python/v*` tags)
+#### Python
 1. Builds the Python package
 2. Publishes to PyPI
 3. Creates a GitHub release with artifacts
 
-#### Go (`go/v*` tags)
+#### Go
 1. Verifies the Go module
 2. Runs tests
 3. Creates a GitHub release
 
-#### Bazel (`v*` tags)
+#### Bazel
 1. Automatically publishes to Bazel Central Registry using the `publish-to-bcr` reusable workflow
 2. Generates BCR entry files (MODULE.bazel, source.json, presubmit.yml, metadata.json)
 3. Creates attestations for security verification
@@ -67,57 +70,30 @@ When a version tag is pushed, the appropriate release workflow automatically:
 
 ### Creating a Release Manually
 
-#### Python Release
+To create a unified release for all ecosystems:
 
 ```bash
-# Update version in pyproject.toml
+# Update version in all ecosystem files
 cd python
-# Edit pyproject.toml and change version = "X.Y.Z"
-
-# Commit changes
-git add pyproject.toml
-git commit -m "chore(python): bump version to X.Y.Z"
-git push
-
-# Create and push tag
-git tag python/vX.Y.Z
-git push origin python/vX.Y.Z
-```
-
-#### Go Release
-
-```bash
-# Optionally create a VERSION file
-cd go
+sed -i 's/version = ".*"/version = "X.Y.Z"/' pyproject.toml
+cd ../go
 echo "X.Y.Z" > VERSION
-git add VERSION
-git commit -m "chore(go): bump version to X.Y.Z"
-git push
-
-# Create and push tag
-git tag go/vX.Y.Z
-git push origin go/vX.Y.Z
-```
-
-#### Bazel Release
-
-```bash
-# Update version in MODULE.bazel
+cd ..
 sed -i 's/version = ".*"/version = "X.Y.Z"/' MODULE.bazel
 
 # Commit changes
-git add MODULE.bazel
-git commit -m "chore(bazel): bump version to X.Y.Z"
+git add python/pyproject.toml go/VERSION MODULE.bazel
+git commit -m "chore: bump version to X.Y.Z"
 git push
 
-# Create and push tag (use standard v* format for BCR)
+# Create and push tag (this will trigger all release workflows)
 git tag vX.Y.Z
 git push origin vX.Y.Z
 
-# The publish-to-bcr workflow will automatically:
-# 1. Generate BCR entry files from .bcr templates
-# 2. Create attestations
-# 3. Open a PR to bazelbuild/bazel-central-registry
+# The following happens automatically:
+# - Python package is built and published to PyPI
+# - Go module release is created on GitHub
+# - publish-to-bcr workflow generates BCR entry and opens PR to bazel-central-registry
 ```
 
 ## Publishing Credentials
@@ -199,7 +175,7 @@ The Release Drafter workflow automatically creates draft releases based on merge
 2. **Update documentation**: Ensure README and docs reflect changes
 3. **Write clear release notes**: Describe what changed and why
 4. **Follow semantic versioning**: Be consistent with version number meanings
-5. **Coordinate releases**: If Python, Go, and Bazel packages change together, coordinate their releases
+5. **Unified releases**: All ecosystems (Python, Go, Bazel) are released together with the same version
 6. **Review draft releases**: Use the automated draft releases as a starting point
 7. **Test Bazel builds**: Before releasing to BCR, ensure `bazel build //...` and `bazel test //...` pass
 8. **BCR templates**: Keep `.bcr` template files up to date with any repository structure changes
