@@ -24,7 +24,7 @@ Tags are namespaced by ecosystem:
 
 - Python releases: `python/v1.2.3`
 - Go releases: `go/v1.2.3`
-- Bazel releases: `bazel/v1.2.3` or `v1.2.3` (for BCR compatibility)
+- Bazel releases: `v1.2.3` (standard format for BCR compatibility)
 
 ## Release Process
 
@@ -58,12 +58,12 @@ When a version tag is pushed, the appropriate release workflow automatically:
 2. Runs tests
 3. Creates a GitHub release
 
-#### Bazel (`bazel/v*` or `v*` tags)
-1. Builds and tests with Bazel
-2. Generates language files from protos
-3. Creates BCR submission files (MODULE.bazel, source.json, presubmit.yml)
-4. Creates a source archive with integrity hash
-5. Creates a GitHub release with BCR submission files
+#### Bazel (`v*` tags)
+1. Automatically publishes to Bazel Central Registry using the `publish-to-bcr` reusable workflow
+2. Generates BCR entry files (MODULE.bazel, source.json, presubmit.yml, metadata.json)
+3. Creates attestations for security verification
+4. Opens a pull request to bazelbuild/bazel-central-registry
+5. Creates a GitHub release
 
 ### Creating a Release Manually
 
@@ -110,16 +110,14 @@ git add MODULE.bazel
 git commit -m "chore(bazel): bump version to X.Y.Z"
 git push
 
-# Create and push tag (can use either format)
-git tag bazel/vX.Y.Z  # or just vX.Y.Z for BCR
-git push origin bazel/vX.Y.Z
+# Create and push tag (use standard v* format for BCR)
+git tag vX.Y.Z
+git push origin vX.Y.Z
 
-# After release is created, submit to BCR:
-# 1. Download BCR submission files from GitHub release
-# 2. Fork https://github.com/bazelbuild/bazel-central-registry
-# 3. Create modules/xds/X.Y.Z/ directory
-# 4. Copy MODULE.bazel, source.json, and presubmit.yml
-# 5. Submit pull request to BCR
+# The publish-to-bcr workflow will automatically:
+# 1. Generate BCR entry files from .bcr templates
+# 2. Create attestations
+# 3. Open a PR to bazelbuild/bazel-central-registry
 ```
 
 ## Publishing Credentials
@@ -144,20 +142,28 @@ Go modules are automatically published when tags are pushed. No additional setup
 
 ### Bazel (BCR)
 
-Bazel modules require manual submission to the Bazel Central Registry after creating a release:
+Bazel modules are automatically published to the Bazel Central Registry using the `publish-to-bcr` reusable workflow:
 
-1. Create a release tag (triggers automatic BCR file generation)
-2. Download the BCR submission files from the GitHub release
-3. Fork [bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry)
-4. Create a new directory: `modules/xds/<version>/`
-5. Copy the following files from the release to this directory:
-   - `MODULE.bazel`
-   - `source.json`
-   - `presubmit.yml`
-6. Submit a pull request to the BCR repository
-7. Wait for BCR maintainers to review and merge
+#### Setup (One-time)
 
-See [BCR documentation](https://github.com/bazelbuild/bazel-central-registry/blob/main/docs/README.md) for more details.
+1. **Fork the BCR**: Fork [bazel-central-registry](https://github.com/bazelbuild/bazel-central-registry) to your GitHub account or organization
+2. **Create a Personal Access Token (PAT)**:
+   - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Create a new token with `repo` and `workflow` scopes
+   - Save it as a repository secret named `BCR_PUBLISH_TOKEN`
+3. **Update the workflow**: Set `registry_fork` in `.github/workflows/publish-to-bcr.yml` to your fork (e.g., `your-username/bazel-central-registry`)
+
+#### How It Works
+
+When you push a `v*` tag:
+1. The workflow automatically generates BCR entry files from `.bcr` templates
+2. Creates security attestations
+3. Opens a pull request to the BCR repository
+4. BCR maintainers review and merge the PR
+
+No manual file copying or PR creation needed!
+
+See [publish-to-bcr documentation](https://github.com/bazel-contrib/publish-to-bcr) for more details.
 
 ## Changelog
 
@@ -196,4 +202,4 @@ The Release Drafter workflow automatically creates draft releases based on merge
 5. **Coordinate releases**: If Python, Go, and Bazel packages change together, coordinate their releases
 6. **Review draft releases**: Use the automated draft releases as a starting point
 7. **Test Bazel builds**: Before releasing to BCR, ensure `bazel build //...` and `bazel test //...` pass
-8. **BCR submission**: For Bazel releases, don't forget to submit to BCR after creating the GitHub release
+8. **BCR templates**: Keep `.bcr` template files up to date with any repository structure changes

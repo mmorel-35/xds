@@ -1,0 +1,20 @@
+matrix:
+  platform:
+    - debian10
+    - macos
+    - ubuntu2004
+    - windows
+  bazel: [6.x, 7.x]
+tasks:
+  build_all:
+    name: Build all targets
+    platform: ${{ platform }}
+    bazel: ${{ bazel }}
+    build_targets:
+      - "//..."
+  test_all:
+    name: Run all tests
+    platform: ${{ platform }}
+    bazel: ${{ bazel }}
+    test_targets:
+      - "//test/..."

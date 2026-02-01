@@ -68,7 +68,12 @@ jobs:
       - name: Create and push tag
         if: inputs.create_tag
         run: |
-          TAG_NAME="${{ inputs.ecosystem }}/v${{ inputs.version }}"
+          if [[ "${{ inputs.ecosystem }}" == "bazel" ]]; then
+            # For Bazel, use v* format (no ecosystem prefix) for BCR compatibility
+            TAG_NAME="v${{ inputs.version }}"
+          else
+            TAG_NAME="${{ inputs.ecosystem }}/v${{ inputs.version }}"
+          fi
           git tag -a "$TAG_NAME" -m "Release ${{ inputs.ecosystem }} version ${{ inputs.version }}"
           git push origin "$TAG_NAME"
           echo "Created and pushed tag: $TAG_NAME"

@@ -1,0 +1,15 @@
+{
+  "homepage": "https://github.com/cncf/xds",
+  "maintainers": [
+    {
+      "name": "xDS Maintainers",
+      "email": "xds-wg@lists.cncf.io",
+      "github": "cncf"
+    }
+  ],
+  "repository": [
+    "github:cncf/xds"
+  ],
+  "versions": [],
+  "yanked_versions": {}
+}

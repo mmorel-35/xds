@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automated release processes via GitHub Actions
 - Release drafter for automated release notes
 - Changelog automation
-- Bazel Central Registry (BCR) submission support
+- Bazel Central Registry (BCR) automated publishing using publish-to-bcr
+- BCR template files (.bcr/metadata.template.json, source.template.json, presubmit.yml)
 
 ## [0.1.0] - Python - Initial Release
 
