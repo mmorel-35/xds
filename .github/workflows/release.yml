@@ -23,30 +23,29 @@ jobs:
           echo "number=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
-        with:
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          draft: false
-          body: |
-            # xDS Release ${{ github.ref_name }}
-            
-            This release includes updates for all language bindings:
-            
-            ## Python (PyPI)
-            ```bash
-            pip install xds==${{ steps.version.outputs.number }}
-            ```
-            
-            ## Go Module
-            ```bash
-            go get github.com/cncf/xds/go@${{ github.ref_name }}
-            ```
-            
-            ## Bazel (BCR)
-            ```starlark
-            bazel_dep(name = "xds", version = "${{ steps.version.outputs.number }}")
-            ```
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "# xDS Release ${{ github.ref_name }}
+
+          This release includes updates for all language bindings:
+
+          ## Python (PyPI)
+          \`\`\`bash
+          pip install xds==${{ steps.version.outputs.number }}
+          \`\`\`
+
+          ## Go Module
+          \`\`\`bash
+          go get github.com/cncf/xds/go@${{ github.ref_name }}
+          \`\`\`
+
+          ## Bazel (BCR)
+          \`\`\`starlark
+          bazel_dep(name = \"xds\", version = \"${{ steps.version.outputs.number }}\")
+          \`\`\`" \
+            --generate-notes
 
 

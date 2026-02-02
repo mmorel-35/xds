@@ -37,8 +37,8 @@ jobs:
           packages-dir: python/dist/
 
       - name: Upload Python artifacts to release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
-        with:
-          tag_name: ${{ github.ref_name }}
-          files: python/dist/*
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.ref_name }}" python/dist/*
 
