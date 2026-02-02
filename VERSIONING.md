@@ -144,39 +144,11 @@ No manual file copying or PR creation needed!
 
 See [publish-to-bcr documentation](https://github.com/bazel-contrib/publish-to-bcr) for more details.
 
-## Changelog
-
-The project maintains a `CHANGELOG.md` file that is automatically updated when releases are published.
-
-To manually update the changelog:
-
-```bash
-# Edit CHANGELOG.md following Keep a Changelog format
-git add CHANGELOG.md
-git commit -m "docs: update changelog for vX.Y.Z"
-git push
-```
-
-## Release Drafter
-
-The Release Drafter workflow automatically creates draft releases based on merged pull requests. Labels on PRs determine the version bump and categorization:
-
-### Version Labels
-- `major` or `breaking` → Major version bump
-- `minor` or `feature` → Minor version bump  
-- `patch`, `fix`, or `bugfix` → Patch version bump
-
-### Category Labels
-- `feature` or `enhancement` → 🚀 Features
-- `fix`, `bugfix`, or `bug` → 🐛 Bug Fixes
-- `chore` or `dependencies` → 🧰 Maintenance
-- `documentation` or `docs` → 📚 Documentation
-
 ## Best Practices
 
 1. **Always test before releasing**: Run tests locally and in CI before creating a release tag
 2. **Update documentation**: Ensure README and docs reflect changes
-3. **Write clear release notes**: Describe what changed and why
+3. **Write clear release notes**: Use the GitHub release description to describe what changed and why
 4. **Follow semantic versioning**: Be consistent with version number meanings
 5. **Unified releases**: All ecosystems (Python, Go, Bazel) are released together with the same version
 6. **Review draft releases**: Use the automated draft releases as a starting point

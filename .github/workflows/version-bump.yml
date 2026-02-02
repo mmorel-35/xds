@@ -32,14 +32,14 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Update Python version
+        working-directory: python
         run: |
-          cd python
           sed -i "s/version = \".*\"/version = \"${{ inputs.version }}\"/" pyproject.toml
           cat pyproject.toml
 
       - name: Update Go version (create VERSION file)
+        working-directory: go
         run: |
-          cd go
           echo "${{ inputs.version }}" > VERSION
           cat VERSION
 

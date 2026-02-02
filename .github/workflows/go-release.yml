@@ -22,14 +22,13 @@ jobs:
           go-version: '1.24'
 
       - name: Verify Go module
+        working-directory: go
         run: |
-          cd go
           go mod verify
           go mod tidy
           go build ./...
 
       - name: Run Go tests
-        run: |
-          cd go
-          go test ./... -v
+        working-directory: go
+        run: go test ./... -v
 
