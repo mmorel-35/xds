@@ -33,7 +33,7 @@ jobs:
 
           ## Python (PyPI)
           ```bash
-          pip install xds==${{ steps.version.outputs.number }}
+          pip install xds-protos==${{ steps.version.outputs.number }}
           ```
 
           ## Go Module
