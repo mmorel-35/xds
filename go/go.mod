@@ -3,7 +3,7 @@ module github.com/cncf/xds/go
 go 1.24
 
 require (
-	cel.dev/expr v0.24.0
+	cel.dev/expr v0.25.1
 	github.com/envoyproxy/protoc-gen-validate v1.2.1
 	google.golang.org/genproto/googleapis/api v0.0.0-20240903143218-8af14fe29dc1
 	google.golang.org/grpc v1.68.0
